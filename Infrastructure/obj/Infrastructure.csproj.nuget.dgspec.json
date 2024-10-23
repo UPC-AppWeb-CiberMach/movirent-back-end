@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ELARD\\Desktop\\MovirentPlatform\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ELARD\\Desktop\\MovirentPlatform\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELARD\\Desktop\\MovirentPlatform\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\ELARD\\Desktop\\MovirentPlatform\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELARD\\Desktop\\MovirentPlatform\\Infrastructure\\obj\\",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
