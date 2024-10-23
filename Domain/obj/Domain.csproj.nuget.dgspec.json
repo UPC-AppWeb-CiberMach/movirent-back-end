@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {}
+    "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\obj\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj"
+              "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\obj\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

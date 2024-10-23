@@ -2885,11 +2885,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
+      "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end11\\Presentation\\Presentation.csproj",
       "projectName": "Presentation",
-      "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
+      "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Presentation\\Presentation.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\obj\\",
+      "outputPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2904,8 +2904,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj": {
-              "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj"
+            "D:\\AplicacionesWeb\\movirent-back-end11\\Application\\Application.csproj": {
+              "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Application\\Application.csproj"
             }
           }
         }
