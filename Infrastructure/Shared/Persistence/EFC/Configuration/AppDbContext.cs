@@ -15,3 +15,5 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       base.OnModelCreating(modelBuilder);
    }
 }
+
+// Scooter Management
