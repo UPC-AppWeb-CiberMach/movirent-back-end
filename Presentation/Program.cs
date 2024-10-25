@@ -1,11 +1,47 @@
+using Application.Scooter.CommandServices;
+using Application.Scooter.QueryServices;
+using Domain.Scooter.Repositories;
+using Domain.Scooter.Services;
+using Domain.Shared;
+using Infrastructure.Scooter;
+using Infrastructure.Shared.Persistence.EFC.Configuration;
+using Infrastructure.Shared.Persistence.EFC.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddControllers();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Dependency Injection native - before .net core Autofact,Nijtect
+builder.Services.AddScoped<IScooterRepository, ScooterRepository>();
+builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
+builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
+
+builder.Services.AddDbContext<AppDbContext>(
+    options =>
+    {
+        if (connectionString != null)
+            if (builder.Environment.IsDevelopment())
+                options.UseMySQL(connectionString)
+                    .LogTo(Console.WriteLine, LogLevel.Information)
+                    .EnableSensitiveDataLogging()
+                    .EnableDetailedErrors();
+            else if (builder.Environment.IsProduction())
+                options.UseMySQL(connectionString)
+                    .LogTo(Console.WriteLine, LogLevel.Error)
+                    .EnableDetailedErrors();
+    });
 var app = builder.Build();
+
+EnsureDatabaseCreation(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -15,32 +51,18 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthorization();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+app.MapControllers();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+// Method to handle database creation
+void EnsureDatabaseCreation(WebApplication app)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        context.Database.EnsureCreated();
+    }
 }
-
-// Scooter-Management

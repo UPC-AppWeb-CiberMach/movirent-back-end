@@ -23,5 +23,3 @@ public class BaseRepository <TEntity>(AppDbContext context): IBaseRepository<TEn
         return entity;
     }
 }
-
-// Scooter Management
