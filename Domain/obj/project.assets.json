@@ -2373,32 +2373,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\ELARD\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\AplicacionesWeb\\movirent-back-end11\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
