@@ -35,5 +35,11 @@ public class SuscriptionController (ISuscriptionQueryService suscriptionQuerySer
         }
         return StatusCode(200, suscriptionResource);
     }
-    
+    [HttpPost]
+    public async Task<IActionResult> CreateSuscription([FromBody] CreateSuscriptionResource suscriptionResource)
+    {
+        var command = CreateSuscriptionCommandFromResourceAssembler.ToCommandFromResource(suscriptionResource);
+        var suscriptionId = await suscriptionCommandService.Handle(command);
+        return StatusCode(201, suscriptionId);
+    }
 }
