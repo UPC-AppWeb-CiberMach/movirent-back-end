@@ -1,10 +1,10 @@
 ﻿namespace Domain.Shared;
 
-public interface IBaseRepository<TEntity>
+public interface IBaseRepository<TEntity> where TEntity : class
 {
-    Task AddAsync(TEntity entity);
-    Task<TEntity?> FindByIdAsync(int id);
-    Task UpdateAsync(TEntity entity);
-    Task RemoveAsync(TEntity entity);
-    Task<IEnumerable<TEntity>> ListAsync();
+    Task<IEnumerable<TEntity>> GetAllAsync();
+    Task<TEntity?> GetByIdAsync(int id);
+    Task<TEntity> AddAsync(TEntity entity);
+    void Update(TEntity entity);
+    void Delete(TEntity entity);
 }

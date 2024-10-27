@@ -1,11 +1,11 @@
-using Application.Scooter.CommandServices;
-using Application.Scooter.QueryServices;
-using Domain.Scooter.Repositories;
-using Domain.Scooter.Services;
-using Domain.Shared;
-using Infrastructure.Scooter;
+using Application.Renting.CommandServices;
+using Application.Renting.QueryServices;
+using Domain.Renting.Repositories;
+using Domain.Renting.Services;
+using Infrastructure.Renting;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
+using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,7 +41,11 @@ builder.Services.AddDbContext<AppDbContext>(
     });
 var app = builder.Build();
 
-EnsureDatabaseCreation(app);
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    context.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -56,13 +60,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-// Method to handle database creation
-void EnsureDatabaseCreation(WebApplication app)
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        context.Database.EnsureCreated();
-    }
-}
