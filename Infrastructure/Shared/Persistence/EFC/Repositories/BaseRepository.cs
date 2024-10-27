@@ -1,6 +1,6 @@
 ﻿using Domain.Shared;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
+using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
@@ -25,4 +25,4 @@ public class BaseRepository <TEntity>(AppDbContext context): IBaseRepository<TEn
     }
 }
 
-//Suscription
+//suscription

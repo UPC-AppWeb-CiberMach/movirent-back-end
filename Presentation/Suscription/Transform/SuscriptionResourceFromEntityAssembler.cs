@@ -7,7 +7,5 @@ public class SuscriptionResourceFromEntityAssembler
 {
     public static SuscriptionResource ToResourceFromEntity(SuscriptionEntity entity) =>
         new(entity.Id, entity.Name,
-             entity.Brand, entity.Model, entity.PricePerHour, 
-             entity.District, entity.Phone, entity.Image
-             );
+             entity.Description, entity.Stars, entity.Price);
 }

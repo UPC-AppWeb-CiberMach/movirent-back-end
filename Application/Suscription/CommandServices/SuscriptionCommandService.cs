@@ -1,9 +1,8 @@
-﻿using Domain.Suscription.Model.Commands;
+﻿using Domain.Shared;
+using Domain.Suscription.Model.Commands;
 using Domain.Suscription.Model.Entities;
 using Domain.Suscription.Repositories;
 using Domain.Suscription.Services;
-using Domain.Suscription.Model.Commands;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 
 namespace Application.Suscription.CommandServices;
 

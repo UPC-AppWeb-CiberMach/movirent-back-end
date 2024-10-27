@@ -1,11 +1,11 @@
 using Application.Suscription.CommandServices;
 using Application.Suscription.QueryServices;
+using Domain.Shared;
 using Domain.Suscription.Repositories;
 using Domain.Suscription.Services;
 using Infrastructure.Suscription;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

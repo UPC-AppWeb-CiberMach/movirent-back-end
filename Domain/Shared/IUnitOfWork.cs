@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
+﻿namespace Domain.Shared;
 
 public interface IUnitOfWork
 {

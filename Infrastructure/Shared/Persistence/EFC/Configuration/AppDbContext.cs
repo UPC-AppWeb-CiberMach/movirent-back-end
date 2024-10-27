@@ -6,8 +6,12 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
 {
    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
    {
-      base.OnConfiguring(optionsBuilder);
+      if (optionsBuilder == null)
+      {
+         throw new Exception("Please provide a valid connection string");
+      }
       optionsBuilder.AddInterceptors();
+      base.OnConfiguring(optionsBuilder);
    }
 
    protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -16,4 +20,4 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
    }
 }
 
-//Suscription
+//suscription

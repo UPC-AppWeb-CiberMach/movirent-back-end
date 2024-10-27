@@ -1,4 +1,4 @@
 ﻿namespace Presentation.Suscription.Resources;
 
 
-public record CreateSuscriptionResource( string Name, string Brand, string Model, double PricePerHour, string District, string Phone, string Image);
+public record CreateSuscriptionResource( string Name, string Description, int Stars, double Price);
