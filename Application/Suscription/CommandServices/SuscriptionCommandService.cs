@@ -20,7 +20,6 @@ public class SuscriptionCommandService : ISuscriptionCommandService
     public async Task<int> Handle(CreateSuscriptionCommand command)
     {
         var suscription = new SuscriptionEntity(command);
-        
         await _suscriptionRepository.AddAsync(suscription);
         await _unitOfWork.CompleteAsync();
         return suscription.Id;
