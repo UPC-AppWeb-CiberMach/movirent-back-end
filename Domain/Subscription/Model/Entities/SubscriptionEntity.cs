@@ -1,29 +1,28 @@
-﻿using Domain.Suscription.Model.Commands;
+﻿
+using Domain.Subscription.Model.Commands;
 
-namespace Domain.Suscription.Model.Entities;
-
-public partial class SuscriptionEntity
+namespace Domain.Subscription.Model.Entities;
+public partial class SubscriptionEntity 
 {
     public int Id { get; }
     public string Name { get; set; }
     public string Description { get; set; }
     public int Stars { get; set; }
     public double Price { get; set; }
-
+    
 }
 
-public partial class SuscriptionEntity
+public partial class SubscriptionEntity
 {
-    public SuscriptionEntity(CreateSuscriptionCommand command)
+    public SubscriptionEntity(CreateSubscriptionCommand command)
     {
         Name = command.Name;
         Description = command.Description;
         Stars = command.Stars;
         Price = command.Price;
-        
     }
 
-    public SuscriptionEntity()
+    public SubscriptionEntity()
     {
         Name = string.Empty;
         Description = string.Empty;
@@ -32,6 +31,8 @@ public partial class SuscriptionEntity
     }
 }
 
-
+public partial class SubscriptionEntity
+{
+}
 
 

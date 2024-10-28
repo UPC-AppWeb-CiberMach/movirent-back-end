@@ -1,12 +1,10 @@
 ﻿using Domain.Shared;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
-using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Infrastructure.Shared.Persistence.EFC.Repositories;
 
-public class BaseRepository <TEntity>(AppDbContext context): IBaseRepository<TEntity > where TEntity : class
+public class BaseRepository<TEntity>(AppDbContext context): IBaseRepository<TEntity> where TEntity : class
 {
     public async Task<IEnumerable<TEntity>> GetAllAsync()
     {
@@ -24,13 +22,4 @@ public class BaseRepository <TEntity>(AppDbContext context): IBaseRepository<TEn
         return entity;
     }
     
-    public void Update(TEntity entity)
-    {
-        context.Set<TEntity>().Update(entity);
-    }
-
-    public void Delete(TEntity entity)
-    {
-        context.Set<TEntity>().Remove(entity);
-    }
 }

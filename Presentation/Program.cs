@@ -1,14 +1,15 @@
-using Application.Suscription.CommandServices;
-using Application.Suscription.QueryServices;
-using Domain.Shared;
-using Domain.Suscription.Repositories;
-using Domain.Suscription.Services;
-using Infrastructure.Suscription;
+using Application.Subscription.CommandServices;
+using Application.Subscription.QueryServices;
+using Domain.Subscription.Repositories;
+using Domain.Subscription.Services;
+using Infrastructure.Subscription;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
+using Domain.Shared;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddControllers();
 // Add services to the container.
@@ -17,9 +18,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Dependency Injection native - before .net core Autofact,Nijtect
-builder.Services.AddScoped<ISuscriptionRepository, SuscriptionRepository>();
-builder.Services.AddScoped<ISuscriptionQueryService, SuscriptionQueryService>();
-builder.Services.AddScoped<ISuscriptionCommandService, SuscriptionCommandService>();
+builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>();
+builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
@@ -38,7 +39,6 @@ builder.Services.AddDbContext<AppDbContext>(
                     .LogTo(Console.WriteLine, LogLevel.Error)
                     .EnableDetailedErrors();
     });
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
