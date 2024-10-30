@@ -1,6 +1,7 @@
 ﻿
 using Domain.Renting.Model.Entities;
 using Domain.Reservation.Model.Entities;
+using Domain.Subscription.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Shared.Persistence.EFC.Configuration;
@@ -40,5 +41,14 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       builder.Entity<ReservationEntity>().Property(r => r.StartTime).IsRequired();
       builder.Entity<ReservationEntity>().Property(r => r.EndTime).IsRequired();
       builder.Entity<ReservationEntity>().Property(r => r.CreatedDate).IsRequired().HasColumnType("datetime");
+      
+      base.OnModelCreating(builder);
+      builder.Entity<SubscriptionEntity>().ToTable("subscriptions");
+      builder.Entity<SubscriptionEntity>().HasKey(s => s.Id);
+      builder.Entity<SubscriptionEntity>().Property(s => s.Id).IsRequired().ValueGeneratedOnAdd();
+      builder.Entity<SubscriptionEntity>().Property(s => s.Name).IsRequired();
+      builder.Entity<SubscriptionEntity>().Property(s => s.Description).IsRequired();
+      builder.Entity<SubscriptionEntity>().Property(s => s.Price).IsRequired();
+      builder.Entity<SubscriptionEntity>().Property(s => s.Stars).IsRequired();
    }
 }
