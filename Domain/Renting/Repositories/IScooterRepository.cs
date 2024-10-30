@@ -6,5 +6,5 @@ namespace Domain.Renting.Repositories;
 
 public interface IScooterRepository : IBaseRepository<ScooterVehicle>
 {
-  
+    
 }

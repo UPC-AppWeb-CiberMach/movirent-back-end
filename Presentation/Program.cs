@@ -1,8 +1,13 @@
 using Application.Renting.CommandServices;
 using Application.Renting.QueryServices;
+using Application.Reservation.CommandServices;
+using Application.Reservation.QueryServices;
 using Domain.Renting.Repositories;
 using Domain.Renting.Services;
+using Domain.Reservation.Repositories;
+using Domain.Reservation.Services;
 using Infrastructure.Renting;
+using Infrastructure.Reservation;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
@@ -21,6 +26,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IScooterRepository, ScooterRepository>();
 builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
 builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IReservationQueryService, ReservationQueryService>();
+builder.Services.AddScoped<IReservationCommandService, ReservationCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
