@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("api/v1/[controller]")]
 [ApiController]
-public class ReservationController(
+public class HistoryController(
     IReservationQueryService reservationQueryService,
     IReservationCommandService reservationCommandService) : ControllerBase
 {
