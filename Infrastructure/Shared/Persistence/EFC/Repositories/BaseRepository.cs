@@ -1,5 +1,6 @@
 ﻿using Domain.Shared;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
+using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Shared.Persistence.EFC.Repositories;
@@ -22,4 +23,24 @@ public class BaseRepository<TEntity>(AppDbContext context): IBaseRepository<TEnt
         return entity;
     }
     
+    public async Task UpdateAsync(TEntity entity)
+    {
+        context.Set<TEntity>().Update(entity);
+    }
+
+    public async Task RemoveAsync(TEntity entity)
+    {
+        context.Set<TEntity>().Remove(entity);
+    }
+    
+
+    public void Update(TEntity entity)
+    {
+        context.Set<TEntity>().Update(entity);
+    }
+
+    public void Delete(TEntity entity)
+    {
+        context.Set<TEntity>().Remove(entity);
+    }
 }

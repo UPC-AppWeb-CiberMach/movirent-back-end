@@ -1,11 +1,16 @@
-using Application.Subscription.CommandServices;
-using Application.Subscription.QueryServices;
-using Domain.Subscription.Repositories;
-using Domain.Subscription.Services;
-using Infrastructure.Subscription;
+using Application.Renting.CommandServices;
+using Application.Renting.QueryServices;
+using Application.Reservation.CommandServices;
+using Application.Reservation.QueryServices;
+using Domain.Renting.Repositories;
+using Domain.Renting.Services;
+using Domain.Reservation.Repositories;
+using Domain.Reservation.Services;
+using Infrastructure.Renting;
+using Infrastructure.Reservation;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
-using Domain.Shared;
+using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,9 +23,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Dependency Injection native - before .net core Autofact,Nijtect
-builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
-builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>();
-builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
+builder.Services.AddScoped<IScooterRepository, ScooterRepository>();
+builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
+builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IReservationQueryService, ReservationQueryService>();
+builder.Services.AddScoped<IReservationCommandService, ReservationCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
