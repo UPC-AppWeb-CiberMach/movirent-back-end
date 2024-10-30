@@ -1,11 +1,13 @@
 ﻿
 using Domain.Renting.Model.Entities;
+using Domain.Reservation.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Shared.Persistence.EFC.Configuration;
 
 public class AppDbContext(DbContextOptions options) :DbContext (options)
 {
+    public DbSet<ReservationEntity> Reservations { get; set; }
    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
    {
        if (optionsBuilder == null)
@@ -30,6 +32,13 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       builder.Entity<ScooterVehicle>().Property(s => s.District).IsRequired();
       builder.Entity<ScooterVehicle>().Property(s => s.Phone).IsRequired();
       
-      
+      builder.Entity<ReservationEntity>().ToTable("reserves");
+      builder.Entity<ReservationEntity>().HasKey(r => r.Id);
+      builder.Entity<ReservationEntity>().Property(r => r.Id).IsRequired().ValueGeneratedOnAdd();
+      builder.Entity<ReservationEntity>().Property(r => r.ScooterId).IsRequired();
+      builder.Entity<ReservationEntity>().Property(r => r.UserId).IsRequired();
+      builder.Entity<ReservationEntity>().Property(r => r.StartTime).IsRequired();
+      builder.Entity<ReservationEntity>().Property(r => r.EndTime).IsRequired();
+      builder.Entity<ReservationEntity>().Property(r => r.CreatedDate).IsRequired().HasColumnType("datetime");
    }
 }

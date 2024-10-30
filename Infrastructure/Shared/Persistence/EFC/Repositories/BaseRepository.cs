@@ -23,6 +23,16 @@ public class BaseRepository<TEntity>(AppDbContext context): IBaseRepository<TEnt
         return entity;
     }
     
+    public async Task UpdateAsync(TEntity entity)
+    {
+        context.Set<TEntity>().Update(entity);
+    }
+
+    public async Task RemoveAsync(TEntity entity)
+    {
+        context.Set<TEntity>().Remove(entity);
+    }
+    
 
     public void Update(TEntity entity)
     {
