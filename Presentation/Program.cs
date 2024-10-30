@@ -8,13 +8,13 @@ using Domain.Renting.Repositories;
 using Domain.Renting.Services;
 using Domain.Reservation.Repositories;
 using Domain.Reservation.Services;
+using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
 using Infrastructure.Renting;
 using Infrastructure.Reservation;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
 using Infrastructure.Subscription;
 using Microsoft.EntityFrameworkCore;
 

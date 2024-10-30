@@ -3,7 +3,7 @@ using Domain.Reservation.Model.Commands;
 using Domain.Reservation.Model.Entities;
 using Domain.Reservation.Repositories;
 using Domain.Reservation.Services;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
+using Domain.Shared;
 
 namespace Application.Reservation.CommandServices;
 

@@ -3,7 +3,7 @@ using Domain.Renting.Model.Entities;
 using Domain.Renting.Repositories;
 using Domain.Renting.Services;
 using Domain.Scooter.Model.Commands;
-using Infrastructure.Shared.Persistence.EFC.Repositories.Interfaces;
+using Domain.Shared;
 
 namespace Application.Renting.CommandServices;
 
