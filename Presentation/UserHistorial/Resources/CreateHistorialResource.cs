@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Presentation.Reservation.Resources;
+namespace Presentation.Historial.Resources;
 
-public record CreateReservationResource(
+public record CreateHistorialResource(
     [Required] 
     int ScooterId, 
     [Required] 

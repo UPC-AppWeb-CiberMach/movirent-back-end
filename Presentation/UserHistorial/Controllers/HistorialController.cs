@@ -1,22 +1,22 @@
-﻿using Domain.Reservation.Model.Commands;
-using Domain.Reservation.Model.Entities;
-using Domain.Reservation.Model.Queries;
-using Domain.Reservation.Services;
-using Presentation.Reservation.Resources;
-using Presentation.Reservation.Transform;
+﻿using Domain.Historial.Model.Commands;
+using Domain.Historial.Model.Entities;
+using Domain.Historial.Model.Queries;
+using Domain.Historial.Services;
+using Presentation.Historial.Resources;
+using Presentation.Historial.Transform;
 
-namespace Presentation.Reservation.Controllers;
+namespace Presentation.Historial.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 
 [Route("api/v1/[controller]")]
 [ApiController]
 public class HistoryController(
-    IReservationQueryService reservationQueryService,
-    IReservationCommandService reservationCommandService) : ControllerBase
+    IHistorialQueryService historialQueryService,
+    IHistorialCommandService historialCommandService) : ControllerBase
 {
     [HttpGet]
-    [ProducesResponseType(typeof(IEnumerable<ReservationEntity>), 200)]
+    [ProducesResponseType(typeof(IEnumerable<HistorialEntity>), 200)]
     [ProducesResponseType(404)]
     [ProducesResponseType(500)]
     [Produces("application/json")]
@@ -24,15 +24,15 @@ public class HistoryController(
     {
         try
         {
-            var query = new GetAllReservationsQuery();
-            var reservations = await reservationQueryService.Handle(query);
-            if (reservations == null || !reservations.Any())
+            var query = new GetAllHistorialsQuery();
+            var historials = await historialQueryService.Handle(query);
+            if (historials == null || !historials.Any())
             {
                 return NotFound();
             }
 
-            var resources = reservations
-                .Select(ReservationResourceFromEntityAssembler.ToResourceFromEntity)
+            var resources = historials
+                .Select(HistorialResourceFromEntityAssembler.ToResourceFromEntity)
                 .ToList();
             return Ok(resources);
         }
@@ -43,42 +43,28 @@ public class HistoryController(
     }
 
     [HttpGet("{id:int}")]
-    [ProducesResponseType(typeof(ReservationEntity), 200)]
+    [ProducesResponseType(typeof(HistorialEntity), 200)]
     [ProducesResponseType(404)]
     public async Task<IActionResult> GetById(int id)
     {
-        var query = new GetReservationByIdQuery(id);
-        var reservation = await reservationQueryService.Handle(query);
-        if (reservation == null)
+        var query = new GetHistorialByIdQuery(id);
+        var historial = await historialQueryService.Handle(query);
+        if (historial == null)
             return NotFound();
-        var resource = ReservationResourceFromEntityAssembler.ToResourceFromEntity(reservation);
+        var resource = HistorialResourceFromEntityAssembler.ToResourceFromEntity(historial);
         return Ok(resource);
     }
 
     [HttpPost]
     [ProducesResponseType(201)]
     [ProducesResponseType(400)]
-    public async Task<IActionResult> Create([FromBody] CreateReservationResource createReservationResource)
+    public async Task<IActionResult> Create([FromBody] CreateHistorialResource createHistorialResource)
     {
         if (!ModelState.IsValid) return BadRequest("Invalid resource data.");
-        var command = CreateReservationCommandFromResourceAssembler.ToCommandFromResource(createReservationResource);
-        var result = await reservationCommandService.Handle(command);
+        var command = CreateHistorialCommandFromResourceAssembler.ToCommandFromResource(createHistorialResource);
+        var result = await historialCommandService.Handle(command);
 
         return CreatedAtAction(nameof(GetById), new { id = result }, new { data = result });
-    }
-
-    [HttpPut("{id:int}")]
-    [ProducesResponseType(204)]
-    [ProducesResponseType(400)]
-    [ProducesResponseType(404)]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateReservationResource updateReservationResource)
-    {
-        if (!ModelState.IsValid)
-            return BadRequest("Invalid resource data.");
-        var command =
-            UpdateReservationCommandFromResourceAssembler.ToCommandFromResource(id, updateReservationResource);
-        var result = await reservationCommandService.Handle(command);
-        return result ? NoContent() : NotFound();
     }
 
     [HttpDelete("{id:int}")]
@@ -86,8 +72,8 @@ public class HistoryController(
     [ProducesResponseType(404)]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = new CancelReservationCommand(id);
-        var result = await reservationCommandService.Handle(command);
+        var command = new DeleteHistorialCommand(id);
+        var result = await historialCommandService.Handle(command);
         return result ? NoContent() : NotFound();
     }
     

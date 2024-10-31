@@ -1,18 +1,18 @@
 using Application.Renting.CommandServices;
 using Application.Renting.QueryServices;
-using Application.Reservation.CommandServices;
-using Application.Reservation.QueryServices;
+using Application.Historial.CommandServices;
+using Application.Historial.QueryServices;
 using Application.Subscription.CommandServices;
 using Application.Subscription.QueryServices;
 using Domain.Renting.Repositories;
 using Domain.Renting.Services;
-using Domain.Reservation.Repositories;
-using Domain.Reservation.Services;
+using Domain.Historial.Repositories;
+using Domain.Historial.Services;
 using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
 using Infrastructure.Renting;
-using Infrastructure.Reservation;
+using Infrastructure.Historial;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Subscription;
@@ -33,9 +33,9 @@ builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
 builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
-builder.Services.AddScoped<IReservationQueryService, ReservationQueryService>();
-builder.Services.AddScoped<IReservationCommandService, ReservationCommandService>();
+builder.Services.AddScoped<IHistorialRepository, HistorialRepository>();
+builder.Services.AddScoped<IHistorialQueryService, HistorialQueryService>();
+builder.Services.AddScoped<IHistorialCommandService, HistorialCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();

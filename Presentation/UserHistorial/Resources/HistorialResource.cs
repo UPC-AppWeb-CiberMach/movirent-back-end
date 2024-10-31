@@ -1,6 +1,6 @@
-﻿namespace Presentation.Reservation.Resources;
+﻿namespace Presentation.Historial.Resources;
 
-public record ReservationResource(
+public record HistorialResource(
     int Id,
     int ScooterId,
     int UserId,
