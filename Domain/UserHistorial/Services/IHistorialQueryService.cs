@@ -1,7 +1,7 @@
-﻿using Domain.Historial.Model.Entities;
-using Domain.Historial.Model.Queries;
+﻿using Domain.UserHistorial.Model.Entities;
+using Domain.UserHistorial.Model.Queries;
 
-namespace Domain.Historial.Services;
+namespace Domain.UserHistorial.Services;
 
 public interface IHistorialQueryService
 {

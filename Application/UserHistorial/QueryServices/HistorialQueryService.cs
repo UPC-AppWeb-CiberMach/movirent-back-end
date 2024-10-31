@@ -1,9 +1,9 @@
-﻿using Domain.Historial.Model.Entities;
-using Domain.Historial.Model.Queries;
-using Domain.Historial.Repositories;
-using Domain.Historial.Services;
+﻿using Domain.UserHistorial.Model.Entities;
+using Domain.UserHistorial.Model.Queries;
+using Domain.UserHistorial.Repositories;
+using Domain.UserHistorial.Services;
 
-namespace Application.Historial.QueryServices;
+namespace Application.UserHistorial.QueryServices;
 
 public class HistorialQueryService : IHistorialQueryService
 {

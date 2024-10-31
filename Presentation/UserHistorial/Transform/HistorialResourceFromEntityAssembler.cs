@@ -1,7 +1,7 @@
-﻿using Domain.Historial.Model.Entities;
-using Presentation.Historial.Resources;
+﻿using Domain.UserHistorial.Model.Entities;
+using Presentation.UserHistorial.Resources;
 
-namespace Presentation.Historial.Transform;
+namespace Presentation.UserHistorial.Transform;
 
 public static class HistorialResourceFromEntityAssembler
 {
@@ -12,6 +12,8 @@ public static class HistorialResourceFromEntityAssembler
             entity.UserId,
             entity.StartTime,
             entity.EndTime,
+            entity.Price,
+            entity.Time,
             entity.CreatedDate
         );
 }

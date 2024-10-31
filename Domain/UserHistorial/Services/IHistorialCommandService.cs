@@ -1,6 +1,6 @@
-﻿using Domain.Historial.Model.Commands;
+﻿using Domain.UserHistorial.Model.Commands;
 
-namespace Domain.Historial.Services;
+namespace Domain.UserHistorial.Services;
 
 public interface IHistorialCommandService
 {

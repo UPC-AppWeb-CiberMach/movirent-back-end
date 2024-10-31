@@ -1,7 +1,7 @@
-﻿using Domain.Historial.Model.Entities;
+﻿using Domain.UserHistorial.Model.Entities;
 using Domain.Shared;
 
-namespace Domain.Historial.Repositories;
+namespace Domain.UserHistorial.Repositories;
 
 public interface IHistorialRepository : IBaseRepository<HistorialEntity>
 {

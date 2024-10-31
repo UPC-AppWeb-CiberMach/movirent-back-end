@@ -1,11 +1,11 @@
 ﻿using System.Data;
-using Domain.Historial.Model.Commands;
-using Domain.Historial.Model.Entities;
-using Domain.Historial.Repositories;
-using Domain.Historial.Services;
+using Domain.UserHistorial.Model.Commands;
+using Domain.UserHistorial.Model.Entities;
+using Domain.UserHistorial.Repositories;
+using Domain.UserHistorial.Services;
 using Domain.Shared;
 
-namespace Application.Historial.CommandServices;
+namespace Application.UserHistorial.CommandServices;
 
 public class HistorialCommandService : IHistorialCommandService
 {
@@ -30,7 +30,9 @@ public class HistorialCommandService : IHistorialCommandService
             ScooterId = command.ScooterId,
             UserId = command.UserId,
             StartTime = command.StartTime,
-            EndTime = command.EndTime
+            EndTime = command.EndTime,
+            Price = command.Price,
+            Time = command.Time
         };
 
         await _historialRepository.AddAsync(reservation);

@@ -1,10 +1,10 @@
-﻿using Domain.Historial.Model.Entities;
-using Domain.Historial.Repositories;
+﻿using Domain.UserHistorial.Model.Entities;
+using Domain.UserHistorial.Repositories;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Historial;
+namespace Infrastructure.UserHistorial;
 
 public class HistorialRepository(AppDbContext context) : BaseRepository<HistorialEntity>(context), IHistorialRepository
 {

@@ -1,6 +1,6 @@
 ﻿
 using Domain.Renting.Model.Entities;
-using Domain.Historial.Model.Entities;
+using Domain.UserHistorial.Model.Entities;
 using Domain.Subscription.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,6 +40,8 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       builder.Entity<HistorialEntity>().Property(r => r.UserId).IsRequired();
       builder.Entity<HistorialEntity>().Property(r => r.StartTime).IsRequired();
       builder.Entity<HistorialEntity>().Property(r => r.EndTime).IsRequired();
+      builder.Entity<HistorialEntity>().Property(r => r.Price).IsRequired();
+      builder.Entity<HistorialEntity>().Property(r => r.Time).IsRequired();
       builder.Entity<HistorialEntity>().Property(r => r.CreatedDate).IsRequired().HasColumnType("datetime");
       
       base.OnModelCreating(builder);

@@ -1,7 +1,7 @@
-﻿using Domain.Historial.Model.Commands;
-using Presentation.Historial.Resources;
+﻿using Domain.UserHistorial.Model.Commands;
+using Presentation.UserHistorial.Resources;
 
-namespace Presentation.Historial.Transform;
+namespace Presentation.UserHistorial.Transform;
 
 public static class DeleteHistorialCommandFromResourceAssembler
 {

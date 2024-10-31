@@ -1,11 +1,11 @@
-﻿using Domain.Historial.Model.Commands;
-using Domain.Historial.Model.Entities;
-using Domain.Historial.Model.Queries;
-using Domain.Historial.Services;
-using Presentation.Historial.Resources;
-using Presentation.Historial.Transform;
+﻿using Domain.UserHistorial.Model.Commands;
+using Domain.UserHistorial.Model.Entities;
+using Domain.UserHistorial.Model.Queries;
+using Domain.UserHistorial.Services;
+using Presentation.UserHistorial.Resources;
+using Presentation.UserHistorial.Transform;
 
-namespace Presentation.Historial.Controllers;
+namespace Presentation.UserHistorial.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 

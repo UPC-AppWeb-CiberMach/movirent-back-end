@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Presentation.Historial.Resources;
+namespace Presentation.UserHistorial.Resources;
 
 public record CreateHistorialResource(
     [Required] 
@@ -10,4 +10,9 @@ public record CreateHistorialResource(
     [Required] 
     DateTime StartTime, 
     [Required] 
-    DateTime EndTime);
+    DateTime EndTime,
+    [Required]
+    int Price, 
+    [Required] 
+    int Time
+    );

@@ -1,4 +1,4 @@
-﻿namespace Presentation.Historial.Resources;
+﻿namespace Presentation.UserHistorial.Resources;
 
 public record HistorialResource(
     int Id,
@@ -6,4 +6,6 @@ public record HistorialResource(
     int UserId,
     DateTime StartTime,
     DateTime EndTime,
+    int Price,
+    int Time,
     DateTime CreatedDate);

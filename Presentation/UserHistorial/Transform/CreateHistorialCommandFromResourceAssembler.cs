@@ -1,7 +1,7 @@
-﻿using Domain.Historial.Model.Commands;
-using Presentation.Historial.Resources;
+﻿using Domain.UserHistorial.Model.Commands;
+using Presentation.UserHistorial.Resources;
 
-namespace Presentation.Historial.Transform;
+namespace Presentation.UserHistorial.Transform;
 
 public static class CreateHistorialCommandFromResourceAssembler
 {
@@ -11,6 +11,8 @@ public static class CreateHistorialCommandFromResourceAssembler
             resource.UserId,
             resource.ScooterId,
             resource.StartTime,
-            resource.EndTime);
+            resource.EndTime,
+            resource.Price,
+            resource.Time);
     }
 }
