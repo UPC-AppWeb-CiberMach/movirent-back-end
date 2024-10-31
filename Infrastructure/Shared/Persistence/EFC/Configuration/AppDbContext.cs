@@ -33,7 +33,7 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       builder.Entity<ScooterVehicle>().Property(s => s.District).IsRequired();
       builder.Entity<ScooterVehicle>().Property(s => s.Phone).IsRequired();
       
-      builder.Entity<ReservationEntity>().ToTable("history");
+      builder.Entity<ReservationEntity>().ToTable("historial");
       builder.Entity<ReservationEntity>().HasKey(r => r.Id);
       builder.Entity<ReservationEntity>().Property(r => r.Id).IsRequired().ValueGeneratedOnAdd();
       builder.Entity<ReservationEntity>().Property(r => r.ScooterId).IsRequired();
