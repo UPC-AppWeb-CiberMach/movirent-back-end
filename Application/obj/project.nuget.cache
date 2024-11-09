@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "z8Yi8cUC4tg=",
+  "dgSpecHash": "5QpAfknOEBg=",
   "success": true,
-  "projectFilePath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.8\\microsoft.netcore.app.ref.8.0.8.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.8\\microsoft.windowsdesktop.app.ref.8.0.8.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.8\\microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
   "logs": []
 }

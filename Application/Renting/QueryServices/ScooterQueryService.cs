@@ -13,8 +13,6 @@ public class ScooterQueryService : IScooterQueryService
     {
         _scooterRepository = scooterRepository;
     }
-    
-
     public async Task<ScooterVehicle?> Handle(GetScooterByIdQuery query)
     {
         return await _scooterRepository.GetByIdAsync(query.Id);

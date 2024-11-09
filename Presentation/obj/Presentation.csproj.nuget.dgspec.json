@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\upc202402\\web\\backend\\movi-back-2024\\Presentation\\Presentation.csproj": {}
+    "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-        "outputPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\obj\\",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj"
+              "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj"
               }
             }
           }
@@ -40,7 +40,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -57,26 +57,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-        "outputPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\obj\\",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -98,7 +112,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -115,26 +129,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-        "outputPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\obj\\",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -146,8 +174,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Domain\\Domain.csproj"
+              "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj"
               }
             }
           }
@@ -160,7 +188,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -191,26 +219,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\upc202402\\web\\backend\\movi-back-2024\\Presentation\\Presentation.csproj": {
+    "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\upc202402\\web\\backend\\movi-back-2024\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-        "outputPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Presentation\\obj\\",
+        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -222,11 +264,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj": {
-                "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Application\\Application.csproj"
+              "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj": {
+                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj"
               },
-              "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\upc202402\\web\\backend\\movi-back-2024\\Infrastructure\\Infrastructure.csproj"
+              "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -239,7 +281,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -249,6 +291,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -266,6 +316,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.8, 8.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -274,7 +342,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

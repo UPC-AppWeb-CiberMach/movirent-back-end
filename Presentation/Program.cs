@@ -1,9 +1,13 @@
+using Application.IAM.CommandServices;
+using Application.IAM.QueryServices;
 using Application.Renting.CommandServices;
 using Application.Renting.QueryServices;
 using Application.Reservation.CommandServices;
 using Application.Reservation.QueryServices;
 using Application.Subscription.CommandServices;
 using Application.Subscription.QueryServices;
+using Domain.IAM.Repositories;
+using Domain.IAM.Services;
 using Domain.Renting.Repositories;
 using Domain.Renting.Services;
 using Domain.Reservation.Repositories;
@@ -11,6 +15,7 @@ using Domain.Reservation.Services;
 using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
+using Infrastructure.IAM;
 using Infrastructure.Renting;
 using Infrastructure.Reservation;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
@@ -41,6 +46,11 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
 builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>();
 builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUserQueryService, UserQueryService>();
+builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
