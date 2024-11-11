@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x8XNO0UeoVs=",
+  "dgSpecHash": "2oA9uvjg+Yg=",
   "success": true,
-  "projectFilePath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.8\\microsoft.netcore.app.ref.8.0.8.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.8\\microsoft.windowsdesktop.app.ref.8.0.8.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.8\\microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

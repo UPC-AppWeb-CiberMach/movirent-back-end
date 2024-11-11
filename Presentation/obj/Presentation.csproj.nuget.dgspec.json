@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj": {}
+    "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj": {
+    "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\obj\\",
+        "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj"
+              "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj"
               }
             }
           }
@@ -40,7 +42,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -57,45 +59,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
+    "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -112,7 +102,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -129,53 +119,41 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Domain\\Domain.csproj"
+              "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Domain\\Domain.csproj"
               }
             }
           }
@@ -188,7 +166,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -219,56 +197,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj": {
+    "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AplicacionesWeb\\movirent-back-end\\Presentation\\obj\\",
+        "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\ELARD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ELARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj": {
-                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Application\\Application.csproj"
+              "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Application\\Application.csproj"
               },
-              "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\AplicacionesWeb\\movirent-back-end\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\ELARD\\AppData\\Local\\GitHubDesktop\\app-3.4.5\\movirent-back-end\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -281,7 +247,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -316,24 +282,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.8, 8.0.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -342,7 +290,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
