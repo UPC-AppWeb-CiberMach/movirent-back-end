@@ -5,6 +5,6 @@ namespace Domain.Renting.Services;
 
 public interface IScooterQueryService
 {
-    Task<IEnumerable<ScooterVehicle>> Handle(GetAllScootersQuery query);
-    Task<ScooterVehicle?> Handle(GetScooterByIdQuery query);
+    Task<IEnumerable<ScooterEntity>> Handle(GetAllScootersQuery query);
+    Task<ScooterEntity?> Handle(GetScooterByIdQuery query);
 }
