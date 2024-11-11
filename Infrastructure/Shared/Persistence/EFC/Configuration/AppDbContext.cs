@@ -77,13 +77,7 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
         builder.Entity<ReviewEntity>().ToTable("reviews");
         builder.Entity<ReviewEntity>().HasKey(r => r.Id);
         builder.Entity<ReviewEntity>().Property(r => r.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<ReviewEntity>().Property(r => r.Name).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.Brand).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.Model).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.Image).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.PricePerHour).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.District).IsRequired();
-        builder.Entity<ReviewEntity>().Property(r => r.Phone).IsRequired();
-       
+        builder.Entity<ReviewEntity>().Property(r => r.Comment).IsRequired();
+        builder.Entity<ReviewEntity>().Property(r => r.StarNumb).IsRequired();
    }
 }

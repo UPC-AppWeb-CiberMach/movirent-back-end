@@ -7,9 +7,7 @@ public static class CreateReviewCommandFromResourceAssembler
 {
     public static CreateReviewCommand ToCommandFromResource(CreateReviewResource resource)
     {
-        return new CreateReviewCommand( resource.Name,
-            resource.Model, resource.Brand, resource.Image,
-            resource.PricePerHour, resource.District, resource.Phone);
+        return new CreateReviewCommand( resource.Comment, resource.StarNumb);
     }
     
     

@@ -6,8 +6,5 @@ namespace Presentation.Review.Transform;
 public class ReviewResourceFromEntityAssembler
 {
     public static ReviewResource ToResourceFromEntity(ReviewEntity entity) =>
-        new(entity.Id, entity.Name,
-             entity.Brand, entity.Model, entity.PricePerHour, 
-             entity.District, entity.Phone, entity.Image
-             );
+        new(entity.Id, entity.Comment, entity.StarNumb);
 }
