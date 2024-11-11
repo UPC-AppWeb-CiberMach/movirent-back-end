@@ -3,7 +3,7 @@ using Domain.Renting.Model.Commands;
 using Domain.Scooter.Model.Commands;
 
 namespace Domain.Renting.Model.Entities;
-public partial class ScooterVehicle 
+public partial class ScooterEntity 
 {
     public int Id { get; }
     public string Name { get; set; }
@@ -16,9 +16,9 @@ public partial class ScooterVehicle
     
 }
 
-public partial class ScooterVehicle
+public partial class ScooterEntity
 {
-    public ScooterVehicle(CreateScooterCommand command)
+    public ScooterEntity(CreateScooterCommand command)
     {
         Name = command.Name;
         Brand = command.Brand;
@@ -29,7 +29,7 @@ public partial class ScooterVehicle
         Phone = command.Phone;
     }
 
-    public ScooterVehicle()
+    public ScooterEntity()
     {
         Name = string.Empty;
         Brand = string.Empty;
@@ -41,7 +41,7 @@ public partial class ScooterVehicle
     }
 }
 
-public partial class ScooterVehicle
+public partial class ScooterEntity
 {
     public void UpdateScooterInfo(UpdateScooterCommand command)
     {

@@ -13,12 +13,12 @@ public class ScooterQueryService : IScooterQueryService
     {
         _scooterRepository = scooterRepository;
     }
-    public async Task<ScooterVehicle?> Handle(GetScooterByIdQuery query)
+    public async Task<ScooterEntity?> Handle(GetScooterByIdQuery query)
     {
         return await _scooterRepository.GetByIdAsync(query.Id);
     }
 
-    public async Task<IEnumerable<ScooterVehicle>> Handle(GetAllScootersQuery query)
+    public async Task<IEnumerable<ScooterEntity>> Handle(GetAllScootersQuery query)
     {
         return await _scooterRepository.GetAllAsync();
     }

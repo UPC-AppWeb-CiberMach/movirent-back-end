@@ -20,7 +20,7 @@ public class ScooterCommandService : IScooterCommandService
 
     public async Task<int> Handle(CreateScooterCommand command)
     {
-        var scooter = new ScooterVehicle(command);
+        var scooter = new ScooterEntity(command);
         
         await _scooterRepository.AddAsync(scooter);
         await _unitOfWork.CompleteAsync();

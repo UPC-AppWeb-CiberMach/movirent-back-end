@@ -3,7 +3,7 @@ using Domain.Shared;
 
 namespace Domain.Renting.Repositories;
 
-public interface IScooterRepository : IBaseRepository<ScooterVehicle>
+public interface IScooterRepository : IBaseRepository<ScooterEntity>
 {
     
 }
