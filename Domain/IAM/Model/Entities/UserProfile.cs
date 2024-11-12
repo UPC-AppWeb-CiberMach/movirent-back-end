@@ -5,46 +5,46 @@ namespace Domain.IAM.Model.Entities;
 
 public partial class UserProfile
 {
-    public int id { get; set; }
-    public string email { get; set; }
-    public string password { get; set; }
-    public string completeName { get; set; }
-    public string phone { get; set; }
-    public string dni { get; set; }
-    public string photo { get; set; }
-    public string address { get; set; }
+    public Guid Id { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+    public string CompleteName { get; set; }
+    public string Phone { get; set; }
+    public string Dni { get; set; }
+    public string Photo { get; set; }
+    public string Address { get; set; }
     
     public UserProfile(CreateUserCommand command)
     {
-        email = command.email;
-        password = command.password;
-        completeName = command.completeName;
-        phone = command.phone;
-        dni = command.dni;
-        photo = command.photo;
-        address = command.address;
+        Email = command.email;
+        Password = command.password;
+        CompleteName = command.completeName;
+        Phone = command.phone;
+        Dni = command.dni;
+        Photo = command.photo;
+        Address = command.address;
     }
     
     public UserProfile() 
     {
-        email = string.Empty; 
-        password = string.Empty;
-        completeName = string.Empty;
-        phone = string.Empty;
-        dni = string.Empty;
-        photo = string.Empty;
-        address = string.Empty;
+        Email = string.Empty; 
+        Password = string.Empty;
+        CompleteName = string.Empty;
+        Phone = string.Empty;
+        Dni = string.Empty;
+        Photo = string.Empty;
+        Address = string.Empty;
     }
     
     public void UpdateUserInfo(UpdateUserCommand command)
     {
-        email = command.email;
-        password = command.password;
-        completeName = command.completeName;
-        phone = command.phone;
-        dni = command.dni;
-        photo = command.photo;
-        address = command.address;
+        Email = command.email;
+        Password = command.password;
+        CompleteName = command.completeName;
+        Phone = command.phone;
+        Dni = command.dni;
+        Photo = command.photo;
+        Address = command.address;
     }
 }
 

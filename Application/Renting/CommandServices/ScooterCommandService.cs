@@ -18,7 +18,7 @@ public class ScooterCommandService : IScooterCommandService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<int> Handle(CreateScooterCommand command)
+    public async Task<Guid> Handle(CreateScooterCommand command)
     {
         var scooter = new ScooterEntity(command);
         

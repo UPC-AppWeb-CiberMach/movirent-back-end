@@ -4,7 +4,7 @@ namespace Domain.Profile.Model.Aggregates;
 //completeName, dni, age, phone, email, password, role, photo, address
 public partial class Profile
 {
-    public int Id { get; }
+    public Guid Id { get; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Dni { get; set; }

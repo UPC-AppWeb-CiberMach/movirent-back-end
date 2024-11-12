@@ -5,21 +5,15 @@ using Domain.Renting.Services;
 
 namespace Application.Renting.QueryServices;
 
-public class ScooterQueryService : IScooterQueryService
+public class ScooterQueryService(IScooterRepository scooterRepository) : IScooterQueryService
 {
-    private readonly IScooterRepository _scooterRepository;
-
-    public ScooterQueryService(IScooterRepository scooterRepository)
-    {
-        _scooterRepository = scooterRepository;
-    }
     public async Task<ScooterEntity?> Handle(GetScooterByIdQuery query)
     {
-        return await _scooterRepository.GetByIdAsync(query.Id);
+        return await scooterRepository.GetByIdAsync(query.Id);
     }
 
     public async Task<IEnumerable<ScooterEntity>> Handle(GetAllScootersQuery query)
     {
-        return await _scooterRepository.GetAllAsync();
+        return await scooterRepository.GetAllAsync();
     }
 }

@@ -17,13 +17,13 @@ public class UserCommandService : IUserCommandService
         _unitOfWork = unitOfWork;
     }
     
-    public async Task<int> Handle(CreateUserCommand command)
+    public async Task<Guid> Handle(CreateUserCommand command)
     {
         var user = new UserProfile(command);
         
         await _usersRepository.AddAsync(user);
         await _unitOfWork.CompleteAsync();
-        return user.id; 
+        return user.Id; 
     }
     
     public async Task<bool> Handle(UpdateUserCommand command)
