@@ -2,30 +2,25 @@ using Application.IAM.CommandServices;
 using Application.IAM.QueryServices;
 using Application.Renting.CommandServices;
 using Application.Renting.QueryServices;
-using Application.Review.CommandServices;
-using Application.Review.QueryServices;
-using Application.UserHistorial.CommandServices;
-using Application.UserHistorial.QueryServices;
 using Application.Subscription.CommandServices;
 using Application.Subscription.QueryServices;
+using Application.UserHistorial.CommandServices;
+using Application.UserHistorial.QueryServices;
 using Domain.IAM.Repositories;
 using Domain.IAM.Services;
 using Domain.Renting.Repositories;
 using Domain.Renting.Services;
-using Domain.Review.Repositories;
-using Domain.Review.Services;
-using Domain.UserHistorial.Repositories;
-using Domain.UserHistorial.Services;
 using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
+using Domain.UserHistorial.Repositories;
+using Domain.UserHistorial.Services;
 using Infrastructure.IAM;
 using Infrastructure.Renting;
-using Infrastructure.Review;
-using Infrastructure.UserHistorial;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Subscription;
+using Infrastructure.UserHistorial;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +31,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
 
 //Dependency Injection native - before .net core Autofact,Nijtect
 builder.Services.AddScoped<IScooterRepository, ScooterRepository>();
@@ -48,19 +52,14 @@ builder.Services.AddScoped<IHistorialQueryService, HistorialQueryService>();
 builder.Services.AddScoped<IHistorialCommandService, HistorialCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
-builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>();
-builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
-builder.Services.AddScoped<IReviewQueryService, ReviewQueryService>();
-builder.Services.AddScoped<IReviewCommandService, ReviewCommandService>();
+builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>();
+builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
@@ -95,6 +94,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowSpecificOrigin");
 app.UseAuthorization();
 
 app.MapControllers();
