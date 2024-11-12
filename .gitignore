@@ -1,5 +1,7 @@
 ﻿# Ignore Rider project files
 .idea/
+**/bin/
+**/obj/
 *.iml
 *.iws
 *.ipr
