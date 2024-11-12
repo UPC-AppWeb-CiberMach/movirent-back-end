@@ -25,13 +25,13 @@ public class HistoryController(
         try
         {
             var query = new GetAllHistorialsQuery();
-            var historials = await historialQueryService.Handle(query);
-            if (historials == null || !historials.Any())
+            var historialsAux = await historialQueryService.Handle(query);
+            if (historialsAux == null || !historialsAux.Any())
             {
                 return NotFound();
             }
 
-            var resources = historials
+            var resources = historialsAux
                 .Select(HistorialResourceFromEntityAssembler.ToResourceFromEntity)
                 .ToList();
             return Ok(resources);
