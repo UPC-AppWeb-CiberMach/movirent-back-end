@@ -1,3 +1,3 @@
 ﻿namespace Domain.UserHistorial.Model.Queries;
 
-public record GetHistorialByIdQuery(int Id);
+public record GetHistoryByIdQuery(long Id);

@@ -1,3 +1,3 @@
 ﻿namespace Domain.UserHistorial.Model.Queries;
 
-public record GetAllHistorialsQuery();
+public record GetAllHistoryQuery();

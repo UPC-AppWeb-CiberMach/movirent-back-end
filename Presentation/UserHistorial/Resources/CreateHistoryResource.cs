@@ -2,17 +2,17 @@
 
 namespace Presentation.UserHistorial.Resources;
 
-public record CreateHistorialResource(
+public record CreateHistoryResource(
     [Required] 
-    int ScooterId, 
+    Guid ClientId, 
     [Required] 
-    int UserId, 
+    Guid ScooterId, 
     [Required] 
-    DateTime StartTime, 
+    DateTime StartDate, 
     [Required] 
-    DateTime EndTime,
+    DateTime EndDate,
     [Required]
-    int Price, 
+    decimal Price, 
     [Required] 
     int Time
-    );
+);

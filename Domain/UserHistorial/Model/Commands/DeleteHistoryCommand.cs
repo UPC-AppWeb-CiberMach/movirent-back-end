@@ -1,3 +1,3 @@
 ﻿namespace Domain.UserHistorial.Model.Commands;
 
-public record DeleteHistorialCommand(int Id); 
+public record DeleteHistoryCommand(long Id); 
