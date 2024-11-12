@@ -47,9 +47,9 @@ builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
 builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IHistorialRepository, HistorialRepository>();
-builder.Services.AddScoped<IHistorialQueryService, HistorialQueryService>();
-builder.Services.AddScoped<IHistorialCommandService, HistorialCommandService>();
+builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();
+builder.Services.AddScoped<IHistoryQueryService, HistoryQueryService>();
+builder.Services.AddScoped<IHistoryCommandService, HistoryCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();

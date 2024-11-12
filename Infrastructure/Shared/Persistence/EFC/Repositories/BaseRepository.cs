@@ -16,20 +16,27 @@ public class BaseRepository<TEntity>(AppDbContext context): IBaseRepository<TEnt
         return await context.Set<TEntity>().FindAsync(id);
     }
 
+    public async Task<TEntity?> GetByLongIdAsync(long id)
+    {
+        return await context.Set<TEntity>().FindAsync(id);
+    }
+
     public async Task<TEntity> AddAsync(TEntity entity)
     {
         await context.Set<TEntity>().AddAsync(entity);
         return entity;
     }
     
-    public async Task UpdateAsync(TEntity entity)
+    public Task UpdateAsync(TEntity entity)
     {
         context.Set<TEntity>().Update(entity);
+        return Task.CompletedTask;
     }
 
-    public async Task RemoveAsync(TEntity entity)
+    public Task RemoveAsync(TEntity entity)
     {
         context.Set<TEntity>().Remove(entity);
+        return Task.CompletedTask;
     }
     
 
