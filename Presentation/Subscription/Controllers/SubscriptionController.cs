@@ -25,6 +25,10 @@ public class SubscriptionController (ISubscriptionQueryService subscriptionQuery
     [HttpPost]
     public async Task<IActionResult> CreateSubscription([FromBody] CreateSubscriptionResource subscriptionResource)
     {
+        if(!ModelState.IsValid)
+        {
+            return StatusCode(400, "Invalid data");
+        }
         var command = CreateSubscriptionCommandFromResourceAssembler.ToCommandFromResource(subscriptionResource);
         var subscriptionId = await subscriptionCommandService.Handle(command);
         return StatusCode(201, subscriptionId);

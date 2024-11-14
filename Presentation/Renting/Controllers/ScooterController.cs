@@ -26,6 +26,10 @@ public class ScooterController (IScooterQueryService scooterQueryService,
     [HttpPost]
     public async Task<IActionResult> CreateScooter([FromBody] CreateScooterResource scooterResource)
     {
+        if(!ModelState.IsValid)
+        {
+            return StatusCode(400, "Invalid data");
+        }
         var command = CreateScooterCommandFromResourceAssembler.ToCommandFromResource(scooterResource);
         var scooterId = await scooterCommandService.Handle(command);
         return StatusCode(201, scooterId);

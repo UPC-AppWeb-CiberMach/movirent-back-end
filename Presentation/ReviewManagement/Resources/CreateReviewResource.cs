@@ -1,4 +1,10 @@
-﻿namespace Presentation.Review.Resources;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Presentation.Review.Resources;
 
 
-public record CreateReviewResource( string Comment, int StarNumb);
+public record CreateReviewResource( 
+    [Required]
+    string Comment, 
+    [Required]
+    int StarNumb);
