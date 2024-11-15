@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="Add: Add Moq Packages for testing">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
+    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +34,12 @@
     &quot;assignee&quot;: &quot;VelardeSoft&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/UPC-AppWeb-CiberMach/movirent-back-end.git",
-    "accountId": "db2ca5c0-2f66-4210-906b-50861e115145"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UPC-AppWeb-CiberMach/movirent-back-end.git&quot;,
+    &quot;accountId&quot;: &quot;db2ca5c0-2f66-4210-906b-50861e115145&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Application/Scooter/CommandServices/ScooterCommandService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Scooter/Model/Entities/Scooter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -131,6 +130,7 @@
       <workItem from="1730004351575" duration="4180000" />
       <workItem from="1731167221809" duration="4204000" />
       <workItem from="1731613748620" duration="476000" />
+      <workItem from="1731694810400" duration="571000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
       <option name="closed" value="true" />
@@ -140,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731693971666</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: develop the user controller  test">
+      <option name="closed" value="true" />
+      <created>1731694523539</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731694523539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add: Add Moq Packages for testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: Add Moq Packages for testing" />
+    <MESSAGE value="Add: develop the user controller  test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: develop the user controller  test" />
   </component>
 </project>
