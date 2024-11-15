@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovirentPlatform.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MovirentPlatform.sln" afterDir="false" />
+    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="Add: Add Moq Packages for testing">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +132,15 @@
       <workItem from="1731167221809" duration="4204000" />
       <workItem from="1731613748620" duration="476000" />
     </task>
+    <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
+      <option name="closed" value="true" />
+      <created>1731693971665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731693971666</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,5 +150,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add: Add Moq Packages for testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: Add Moq Packages for testing" />
   </component>
 </project>
