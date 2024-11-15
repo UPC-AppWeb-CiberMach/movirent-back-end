@@ -26,8 +26,20 @@ public class ReviewController (IReviewQueryService reviewQueryService,
     [HttpPost]
     public async Task<IActionResult> CreateScooter([FromBody] CreateReviewResource reviewResource)
     {
-        var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
-        var reviewId = await reviewCommandService.Handle(command);
-        return StatusCode(201, reviewId);
+        if (!ModelState.IsValid)
+        {
+            return BadRequest("Invalid review data.");
+        }
+
+        try
+        {
+            var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
+            var reviewId = await reviewCommandService.Handle(command);
+            return StatusCode(201, reviewId);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "An error occurred while creating the review.");
+        }
     }
 }
