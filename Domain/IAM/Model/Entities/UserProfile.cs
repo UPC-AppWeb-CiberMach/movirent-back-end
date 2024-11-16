@@ -17,40 +17,27 @@ public partial class UserProfile
 
     public UserProfile(CreateUserCommand command)
     {
+        // Validaciones y asignaciones iniciales
         if (string.IsNullOrWhiteSpace(command.email))
-        {
             throw new ArgumentException("El correo electrónico es obligatorio.");
-        }
 
         if (!new EmailAddressAttribute().IsValid(command.email))
-        {
             throw new ArgumentException("El formato del correo electrónico es inválido.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.password) || command.password.Length < 8)
-        {
             throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.completeName))
-        {
             throw new ArgumentException("El nombre completo es obligatorio.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.phone))
-        {
             throw new ArgumentException("El teléfono es obligatorio.");
-        }
 
         if (command.dni.Length != 8)
-        {
             throw new ArgumentException("El DNI debe tener exactamente 8 caracteres.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.address))
-        {
             throw new ArgumentException("La dirección es obligatoria.");
-        }
 
         email = command.email;
         password = command.password;
@@ -63,6 +50,7 @@ public partial class UserProfile
 
     public UserProfile() 
     {
+        // Valores predeterminados
         email = string.Empty; 
         password = string.Empty;
         completeName = string.Empty;
@@ -74,39 +62,35 @@ public partial class UserProfile
 
     public void UpdateUserInfo(UpdateUserCommand command)
     {
+        // Validaciones antes de actualizar
         if (string.IsNullOrWhiteSpace(command.email))
-        {
             throw new ArgumentException("El correo electrónico es obligatorio.");
-        }
 
         if (!new EmailAddressAttribute().IsValid(command.email))
-        {
             throw new ArgumentException("El formato del correo electrónico es inválido.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.password) || command.password.Length < 8)
-        {
             throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.completeName))
-        {
             throw new ArgumentException("El nombre completo es obligatorio.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.phone))
-        {
             throw new ArgumentException("El teléfono es obligatorio.");
-        }
 
         if (command.dni.Length != 8)
-        {
             throw new ArgumentException("El DNI debe tener exactamente 8 caracteres.");
-        }
 
         if (string.IsNullOrWhiteSpace(command.address))
-        {
             throw new ArgumentException("La dirección es obligatoria.");
-        }
+
+        // Asignaciones después de validar
+        email = command.email;
+        password = command.password;
+        completeName = command.completeName;
+        phone = command.phone;
+        dni = command.dni;
+        photo = command.photo;
+        address = command.address;
     }
 }
