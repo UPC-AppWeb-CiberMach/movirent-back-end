@@ -14,7 +14,7 @@ public class HistoryRepository(AppDbContext context) : BaseRepository<HistoryEnt
     {
         return await _context.Users.AnyAsync(e => e.Id == clientId);
     }
-
+    
     public async Task<bool> ExistByScooterIdAsync(Guid scooterId)
     {
         return await _context.Scooters.AnyAsync(e => e.Id == scooterId);

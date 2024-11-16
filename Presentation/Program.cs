@@ -13,7 +13,6 @@ using Domain.Renting.Services;
 using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
-using Domain.UserHistorial.Repositories;
 using Domain.UserHistorial.Services;
 using Infrastructure.IAM;
 using Infrastructure.Renting;
@@ -22,6 +21,9 @@ using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Subscription;
 using Infrastructure.UserHistorial;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
+using HistoryRepository = Infrastructure.UserHistorial.HistoryRepository;
+using IHistoryRepository = Domain.UserHistorial.Repositories.IHistoryRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
