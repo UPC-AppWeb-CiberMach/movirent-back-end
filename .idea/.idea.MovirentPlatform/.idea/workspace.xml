@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="add: update the layers" />
+    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="feat: Update Test in the UserController">
+      <change afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserQueryServiceTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationTest/Renting/ScooterCommandServiceTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationTest/ReviewManagement/ReviewCommandServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +46,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Application/Scooter/CommandServices/ScooterCommandService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Domain/Scooter/Model/Entities/Scooter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Domain/Scooter/Repositories/IScooterRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Shared/IBaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
@@ -206,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731786062173</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: I updated the bounds context">
+      <option name="closed" value="true" />
+      <created>1731787996311</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731787996311</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: Update Test in the UserController">
+      <option name="closed" value="true" />
+      <created>1731791131537</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731791131537</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +245,8 @@
     <MESSAGE value="add: develop the review management test" />
     <MESSAGE value="add: create class presentation test" />
     <MESSAGE value="add: update the layers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: update the layers" />
+    <MESSAGE value="feat: I updated the bounds context" />
+    <MESSAGE value="feat: Update Test in the UserController" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Update Test in the UserController" />
   </component>
 </project>
