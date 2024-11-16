@@ -112,7 +112,7 @@ public class ScooterControllerTest
             District = "Olivos",
             Phone = "987654321"
         };
-        
+        //a
         scooterQueryService.Setup(x => x.Handle(It.IsAny<GetScooterByIdQuery>()))
             .ReturnsAsync(scooterEntity); 
         
