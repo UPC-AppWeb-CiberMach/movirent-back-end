@@ -130,7 +130,9 @@
       <workItem from="1730004351575" duration="4180000" />
       <workItem from="1731167221809" duration="4204000" />
       <workItem from="1731613748620" duration="476000" />
-      <workItem from="1731694810400" duration="571000" />
+      <workItem from="1731694810400" duration="1656000" />
+      <workItem from="1731730947875" duration="39000" />
+      <workItem from="1731731355182" duration="626000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
       <option name="closed" value="true" />
@@ -148,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731694523539</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add: add testing CreateUserResource">
+      <option name="closed" value="true" />
+      <created>1731695591596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731695591597</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +170,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add: Add Moq Packages for testing" />
     <MESSAGE value="Add: develop the user controller  test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: develop the user controller  test" />
+    <MESSAGE value="add: add testing CreateUserResource" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: add testing CreateUserResource" />
   </component>
 </project>
