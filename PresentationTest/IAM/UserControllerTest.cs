@@ -25,6 +25,8 @@ public class UserControllerTest
             new UserController(userQueryService.Object,
                 userCommandService.Object); 
         var result = controller.GetAllUsers().Result as ObjectResult; 
+        
+        
         Assert.NotNull(result); 
         Assert.Equal(200, result.StatusCode); 
     }
