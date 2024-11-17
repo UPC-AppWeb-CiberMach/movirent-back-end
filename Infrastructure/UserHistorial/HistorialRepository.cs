@@ -5,7 +5,9 @@ using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.UserHistorial;
-
+/// <summary>
+/// Repositorio de historiales
+/// </summary>
 public class HistorialRepository(AppDbContext context) : BaseRepository<HistorialEntity>(context), IHistorialRepository
 {
     public async Task<HistorialEntity?> CheckScooterAvailableAsync(int id)
