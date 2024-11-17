@@ -7,7 +7,9 @@ using Presentation.Renting.Resources;
 using Presentation.Renting.Transform;
 
 namespace Presentation.Renting.Controllers;
-
+/// <summary>
+/// Controlador de scooters
+/// </summary>
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]

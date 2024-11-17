@@ -6,7 +6,9 @@ using Presentation.Subscription.Resources;
 using Presentation.Subscription.Transform;
 
 namespace Presentation.Subscription.Controllers;
-
+/// <summary>
+/// Controlador de suscripciones
+/// </summary>
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]

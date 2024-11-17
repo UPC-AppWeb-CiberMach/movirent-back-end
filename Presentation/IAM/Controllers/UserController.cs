@@ -8,6 +8,10 @@ using Presentation.IAM.Resources;
 using Presentation.IAM.Transform;
 
 namespace Presentation.IAM.controller
+
+/// <summary>
+/// Controlador de usuarios
+/// </summary>
 {
     [ApiController]
     [Route("api/v1/[controller]")]

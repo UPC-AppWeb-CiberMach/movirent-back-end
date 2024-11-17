@@ -7,7 +7,9 @@ using Presentation.Review.Resources;
 using Presentation.Review.Transform;
 
 namespace Presentation.Review.Controllers;
-
+/// <summary>
+/// Controlador de reseñas
+/// </summary>
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]

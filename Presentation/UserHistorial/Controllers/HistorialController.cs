@@ -7,7 +7,9 @@ using Presentation.UserHistorial.Transform;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.UserHistorial.Controllers;
-
+/// <summary>
+/// Controlador de historial
+/// </summary>
 [Route("api/v1/[controller]")]
 [ApiController]
 public class HistoryController(
