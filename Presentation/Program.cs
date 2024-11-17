@@ -28,8 +28,22 @@ using Infrastructure.Subscription;
 using Infrastructure.UserHistorial;
 using Microsoft.EntityFrameworkCore;
 
+
+/// <summary>
+/// Programa principal
+/// Hecho por: CiberMach Grupo 1
+/// Profesor: Naldo Reupo
+/// Curso: Aplicaciones Web
+/// Sección: SI92
+/// Ciclo: 202402
+/// </summary>
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "MovirentPlatform", Version = "v1" });
+});
 
 builder.Services.AddControllers();
 // Add services to the container.

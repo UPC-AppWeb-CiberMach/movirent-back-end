@@ -5,6 +5,9 @@ using Domain.Renting.Services;
 
 namespace Application.Renting.QueryServices;
 
+/// <summary>
+/// Servicio de consultas de scooters
+/// </summary>
 public class ScooterQueryService : IScooterQueryService
 {
     private readonly IScooterRepository _scooterRepository;
