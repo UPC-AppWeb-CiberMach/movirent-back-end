@@ -13,7 +13,7 @@ public class ScooterControllerTest
 {
     // Test para mostrar todos los scooters
     [Fact]
-    public void GetAllScootersMustToBeWorking()
+    public void Get_AllScooterTest()
     {
         var scooterQueryService = new Mock<IScooterQueryService>();
         var scooterCommandService = new Mock<IScooterCommandService>();
@@ -23,71 +23,87 @@ public class ScooterControllerTest
         scooterQueryService.Setup(x => x.Handle(query)).ReturnsAsync(scooterEntities);
         var controller = new ScooterController(scooterQueryService.Object, scooterCommandService.Object);
         var result = controller.GetAllScooters().Result as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
         
     }
     
     [Fact]
-    public void AddScooterMustToBeWorking()
+    public void Post_CreateNewScooterTest()
     {
         var scooterQueryService = new Mock<IScooterQueryService>();
         var scooterCommandService = new Mock<IScooterCommandService>();
         var controller = new ScooterController(scooterQueryService.Object, scooterCommandService.Object);
         var result = controller.CreateScooter(new CreateScooterResource(
-            "Test", 
-            "Test", 
-            "Test",
+            "Scooter Sport", 
+            "Yamaha", 
+            "Modelo 2021",
             5.5, 
             "Olivos", 
             "987654321", 
-            "ytrewqgfd")
+            "PhotoScooter")
         ).Result as ObjectResult;
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 201
         Assert.NotNull(result);
         Assert.Equal(201, result.StatusCode);
     }
     
    [Fact]
-    public void UpdateScooterMustToBeWorking()
+    public void Put_UpdateScooterTest()
     {
         var scooterQueryService = new Mock<IScooterQueryService>();
         var scooterCommandService = new Mock<IScooterCommandService>();
         var controller = new ScooterController(scooterQueryService.Object, scooterCommandService.Object);
         var result = controller.UpdateScooter(1, new UpdateScooterResource(
-            "Test", 
-            "Test", 
-            "Test", 
+            "Scooter Sport", 
+            "Yamaha", 
+            "Modelo 2021",
             5.5, 
             "Olivos", 
             "987654321", 
-            "ytrewqgfd")
+            "PhotoScooter")
         ).Result as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
     }
     
     [Fact]
-    public void DeleteScooterMustToBeWorking()
+    public void Delete_ScooterTest()
     {
         var scooterQueryService = new Mock<IScooterQueryService>();
         var scooterCommandService = new Mock<IScooterCommandService>();
         var controller = new ScooterController(scooterQueryService.Object, scooterCommandService.Object);
         var result = controller.DeleteScooter(1).Result as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
     }
     
     [Fact]
-    public void GetScooterByIdMustToBeWorking()
+    public void Get_ScooterByIdTest()
     {
         var scooterQueryService = new Mock<IScooterQueryService>();
         var scooterCommandService = new Mock<IScooterCommandService>();
         var controller = new ScooterController(scooterQueryService.Object, scooterCommandService.Object);
-        var command = new CreateScooterCommand("Test", "Test", "Test", "teersi", 5.5, "987654321", "ytrewqgfd");
+        var command = new CreateScooterCommand(
+            "Scooter Sport", 
+            "Yamaha", 
+            "Modelo 2021", 
+            "PhotoScooter", 
+            5.5, 
+            "Los Olivos", 
+            "987654321");
         var scooterEntity = new ScooterEntity(command);
         scooterQueryService.Setup(x => x.Handle(new GetScooterByIdQuery(1)))
             .ReturnsAsync(scooterEntity);
         var result = controller.GetScooterById(1).Result as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
         
@@ -104,20 +120,20 @@ public class ScooterControllerTest
         var scooterId = Guid.NewGuid(); 
         var scooterEntity = new ScooterEntity 
         {
-            Name = "Test",
-            Brand = "Test",
-            Model = "Test",
-            Image = "Test",
+            Name = "Scoter Sport",
+            Brand = "Yamaha",
+            Model = "Modelo 2021",
+            Image = "PhotoScooter",
             PricePerHour = 5.5,
-            District = "Olivos",
+            District = "SMP",
             Phone = "987654321"
         };
-        //a
         scooterQueryService.Setup(x => x.Handle(It.IsAny<GetScooterByIdQuery>()))
             .ReturnsAsync(scooterEntity); 
         
-        var result =
-            controller.DeleteScooter(1).Result as ObjectResult; 
+        var result = controller.DeleteScooter(1).Result as ObjectResult; 
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result); 
         Assert.Equal(200, result.StatusCode); 
     }

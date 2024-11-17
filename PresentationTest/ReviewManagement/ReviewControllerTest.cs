@@ -1,7 +1,5 @@
-﻿using Domain.Review.Model.Commands;
-using Domain.Review.Model.Entities;
+﻿using Domain.Review.Model.Entities;
 using Domain.Review.Model.Queries;
-using Domain.Review.Repositories;
 using Domain.Review.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -14,7 +12,7 @@ public class ReviewManagementTest
 {
     
     [Fact]
-    public async Task GetReviews()
+    public async Task Get_ReviewsTest()
     {
         var reviewCommandService = new Mock<IReviewCommandService>();
         var reviewQueryService = new Mock<IReviewQueryService>();
@@ -24,23 +22,26 @@ public class ReviewManagementTest
         reviewQueryService.Setup(x => x.Handle(query)).ReturnsAsync(reviewEntities);
         var controller = new ReviewController(reviewQueryService.Object, reviewCommandService.Object);
         var result = await controller.GetAllScooters() as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
     }
     
     
     [Fact]
-    public async Task CreateReview()
+    public async Task Post_CreateReviewTest()
     {
         var reviewCommandService = new Mock<IReviewCommandService>();
         var reviewQueryService = new Mock<IReviewQueryService>();
         var controller = new ReviewController(reviewQueryService.Object, reviewCommandService.Object);
         var result = await controller.CreateScooter(new CreateReviewResource(
-            "Test",
+            "Es un buen scooter",
             5
         )) as ObjectResult;
+        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 201
         Assert.NotNull(result);
         Assert.Equal(201, result.StatusCode);
     }
-    
 }
