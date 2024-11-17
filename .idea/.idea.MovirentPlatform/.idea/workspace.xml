@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="feat: Update Test in the UserController">
-      <change afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserQueryServiceTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationTest/Renting/ScooterCommandServiceTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationTest/ReviewManagement/ReviewCommandServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/Renting/ScooterControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/Renting/ScooterControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/ReviewManagement/ReviewControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/ReviewManagement/ReviewControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTest/Subscription/SubscriptionControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/Subscription/SubscriptionControllerTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/UPC-AppWeb-CiberMach/movirent-back-end.git&quot;,
-    &quot;accountId&quot;: &quot;db2ca5c0-2f66-4210-906b-50861e115145&quot;
+    &quot;accountId&quot;: &quot;8eb8324d-3c13-4d87-b7b9-f78c63cc0e6a&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -137,6 +137,8 @@
       <workItem from="1731731355182" duration="626000" />
       <workItem from="1731769863440" duration="2887000" />
       <workItem from="1731785112500" duration="1023000" />
+      <workItem from="1731840229444" duration="636000" />
+      <workItem from="1731845553018" duration="1631000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
       <option name="closed" value="true" />
@@ -226,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731791131537</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: Add the tests for scooter in the application layer">
+      <option name="closed" value="true" />
+      <created>1731794882340</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731794882340</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +257,7 @@
     <MESSAGE value="add: update the layers" />
     <MESSAGE value="feat: I updated the bounds context" />
     <MESSAGE value="feat: Update Test in the UserController" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Update Test in the UserController" />
+    <MESSAGE value="feat: Add the tests for scooter in the application layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add the tests for scooter in the application layer" />
   </component>
 </project>

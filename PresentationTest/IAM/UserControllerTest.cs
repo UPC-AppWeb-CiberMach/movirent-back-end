@@ -12,7 +12,7 @@ namespace PresentationTest.IAM;
 public class UserControllerTest
 {
     [Fact]
-    public void GetAllUsersTest()
+    public void Get_AllUsersTest()
     {
         var userQueryService = new Mock<IUserQueryService>(); 
         var userCommandService = new Mock<IUserCommandService>(); 
@@ -26,13 +26,13 @@ public class UserControllerTest
                 userCommandService.Object); 
         var result = controller.GetAllUsers().Result as ObjectResult; 
         
-        
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result); 
         Assert.Equal(200, result.StatusCode); 
     }
     
     [Fact]
-    public void AddUserTest()
+    public void Post_NewUserTest()
     {
         var userQueryService = new Mock<IUserQueryService>(); 
         var userCommandService = new Mock<IUserCommandService>(); 
@@ -40,21 +40,22 @@ public class UserControllerTest
             new UserController(userQueryService.Object,
                 userCommandService.Object); 
         var result = controller.CreateUser(new CreateUserResource( 
-            "ana123@gmail.com",
-            "123456789",
-            "Ana",
+            "velarde@gmail.com",
+            "velarde123",
+            "Nestor Velarde",
             "987654321",
             "87654321",
-            "ytrewqgfd",
-            "Olivos"
+            "miProfile.com",
+            "Los Olivos"
         )).Result as ObjectResult;
       
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 201
         Assert.NotNull(result); 
         Assert.Equal(201, result.StatusCode); 
     }
     
     [Fact]
-    public async Task GetUserByIdTest()
+    public async Task Get_UserByIdTest()
     {
         var userQueryService = new Mock<IUserQueryService>();
         var userCommandService = new Mock<IUserCommandService>(); 
@@ -78,12 +79,13 @@ public class UserControllerTest
         
         var result = await controller.GetUserById(1) as ObjectResult; 
         
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result); 
         Assert.Equal(200, result.StatusCode); 
     }
     
     [Fact]
-    public async Task UpdateUserTest()
+    public async Task Put_UserByIdTest()
     {
         var userQueryService = new Mock<IUserQueryService>(); 
         var userCommandService = new Mock<IUserCommandService>(); 
@@ -96,23 +98,23 @@ public class UserControllerTest
         {
             Id = userId,
             Email = "velader@gmail.com",
-            Password = "Password",
-            CompleteName = "Test User",
-            Phone = "1234567890",
+            Password = "Password123",
+            CompleteName = "Nestor Velarde",
+            Phone = "987654321",
             Dni = "12345678",
-            Photo = "path/to/photo.jpg",
-            Address = "123 Test St, Test City"
+            Photo = "miProfile.com",
+            Address = "Los Olivos 123"
         };
 
         var updateUserResource =
             new UpdateUserResource( 
-                "velarde",
-                "87654321",
-                "Nestor veladre",
+                "velardeNestor@gmail.com",
+                "Password123",
+                "Nestor Velarde",
                 "987654321",
-                "87654321",
-                "ytreh",
-                "Los Olivos"
+                "12345678",
+                "miProfile.com",
+                "Los Olivos 123"
             );
         
         userQueryService.Setup(x => x.Handle(It.IsAny<GetUsersByIdQuery>()))
@@ -120,13 +122,14 @@ public class UserControllerTest
         
         var result = await controller.UpdateUser(1, updateUserResource) as ObjectResult; 
         
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result); 
         Assert.Equal(200, result.StatusCode); 
     }
     
    
     [Fact]
-    public async Task DeleteUserTest()
+    public async Task Delete_UserByIdTest()
     {
         var userQueryService = new Mock<IUserQueryService>(); 
         var userCommandService = new Mock<IUserCommandService>(); 
@@ -138,21 +141,21 @@ public class UserControllerTest
         var userProfile = new UserProfile
         {
             Id = userId,
-            Email = "velarde",
+            Email = "velarde@gmail.com",
             Password = "87654321",
             CompleteName = "Nestor veladre",
             Phone = "987654321",
             Dni = "87654321",
-            Photo = "ytreh",
+            Photo = "miProfile.com",
             Address = "Los Olivos"
         };
         
         userQueryService.Setup(x => x.Handle(It.IsAny<GetUsersByIdQuery>()))
             .ReturnsAsync(userProfile); 
         
-        var result =
-            await controller.DeleteUser(1) as ObjectResult;
+        var result = await controller.DeleteUser(1) as ObjectResult;
         
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode); 
     }

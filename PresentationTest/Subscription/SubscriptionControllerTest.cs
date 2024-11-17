@@ -14,7 +14,7 @@ namespace PresentationTest.Subscription;
 public class SubscriptionControllerTest
 {
     [Fact]
-    public void GetAllSubscriptionsMustToBeWorking()
+    public void Get_AllSubscriptionsTest()
     {
         var subscriptionQueryService = new Mock<ISubscriptionQueryService>();
         var subscriptionCommandService = new Mock<ISubscriptionCommandService>();
@@ -24,13 +24,14 @@ public class SubscriptionControllerTest
         subscriptionQueryService.Setup(x => x.Handle(query)).ReturnsAsync(subscriptionEntities);
         var controller = new SubscriptionController(subscriptionQueryService.Object, subscriptionCommandService.Object);
         var result = controller.GetAllSubscriptions().Result as ObjectResult;
+        // Esperamos que el resultado no sea nulo y que el código de estado sea 200
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
         
     }
 
     [Fact]
-    public void AddSubscriptionMustToBeWorking()
+    public void Post_AddSubscriptionTest()
     {
         var subscriptionQueryService = new Mock<ISubscriptionQueryService>();
         var subscriptionCommandService = new Mock<ISubscriptionCommandService>();
@@ -46,7 +47,7 @@ public class SubscriptionControllerTest
     }
 
     [Fact]
-    public void GetSubscriptionByIdMustToBeWorking()
+    public void Get_SubscriptionByIdTest()
     {
         var subscriptionQueryService = new Mock<ISubscriptionQueryService>();
         var subscriptionCommandService = new Mock<ISubscriptionCommandService>();
