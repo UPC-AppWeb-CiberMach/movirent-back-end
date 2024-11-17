@@ -9,13 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="">
+    <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/Renting/ScooterControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/Renting/ScooterControllerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/ReviewManagement/ReviewControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/ReviewManagement/ReviewControllerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/Subscription/SubscriptionControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/Subscription/SubscriptionControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/IAM/Repositories/IUsersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/IAM/Repositories/IUsersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/IAM/UsersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/IAM/UsersRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1731769863440" duration="2887000" />
       <workItem from="1731785112500" duration="1023000" />
       <workItem from="1731840229444" duration="636000" />
-      <workItem from="1731845553018" duration="1631000" />
+      <workItem from="1731845553018" duration="4711000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
       <option name="closed" value="true" />
@@ -236,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731794882340</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile.">
+      <option name="closed" value="true" />
+      <created>1731847644882</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731847644882</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +267,7 @@
     <MESSAGE value="feat: I updated the bounds context" />
     <MESSAGE value="feat: Update Test in the UserController" />
     <MESSAGE value="feat: Add the tests for scooter in the application layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add the tests for scooter in the application layer" />
+    <MESSAGE value="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile." />
   </component>
 </project>

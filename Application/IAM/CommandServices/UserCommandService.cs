@@ -19,10 +19,30 @@ public class UserCommandService : IUserCommandService
     
     public async Task<Guid> Handle(CreateUserCommand command)
     {
+        // ----- No se puede crear un usuario con un email que ya existe -----
+        var existingUserByEmail = await _usersRepository.GetByEmailAsync(command.email);
+        if (existingUserByEmail != null)
+        {
+            throw new Exception("El correo registrado ya existe");
+        }
+
+        // ----- No se puede crear un usuario con un DNI que ya existe -----
+        var existingUserByDni = await _usersRepository.GetByDniAsync(command.dni);
+        if (existingUserByDni != null)
+        {
+            throw new Exception("El DNI registrado ya existe");
+        }
+
+        // ----- No se puede crear un usuario con un teléfono que ya existe -----
+        var existingUserByPhone = await _usersRepository.GetByPhoneAsync(command.phone);
+        if (existingUserByPhone != null)
+        {
+            throw new Exception("El teléfono registrado ya existe");
+        }
         var user = new UserProfile(command);
-        
         await _usersRepository.AddAsync(user);
         await _unitOfWork.CompleteAsync();
+    
         return user.Id; 
     }
     

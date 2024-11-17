@@ -21,7 +21,6 @@ public class ScooterCommandService : IScooterCommandService
     public async Task<Guid> Handle(CreateScooterCommand command)
     {
         var scooter = new ScooterEntity(command);
-        
         await _scooterRepository.AddAsync(scooter);
         await _unitOfWork.CompleteAsync();
         return scooter.Id;
