@@ -6,6 +6,9 @@ using Domain.Shared;
 
 namespace Application.Review.CommandServices;
 
+/// <summary>
+/// Servicio de comandos para reseñas
+/// </summary>
 public class ReviewCommandService : IReviewCommandService
 {
     private readonly IReviewRepository _reviewRepository;

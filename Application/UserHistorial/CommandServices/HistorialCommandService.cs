@@ -7,6 +7,9 @@ using Domain.Shared;
 
 namespace Application.UserHistorial.CommandServices;
 
+/// <summary>
+/// Servicio de comandos de historiales
+/// </summary>
 public class HistorialCommandService : IHistorialCommandService
 {
     private readonly IHistorialRepository _historialRepository;

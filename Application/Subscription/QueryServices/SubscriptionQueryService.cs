@@ -5,6 +5,9 @@ using Domain.Subscription.Services;
 
 namespace Application.Subscription.QueryServices;
 
+/// <summary>
+/// Servicio de consultas de suscripciones
+/// </summary>
 public class SubscriptionQueryService : ISubscriptionQueryService
 {
     private readonly ISubscriptionRepository _subscriptionRepository;
