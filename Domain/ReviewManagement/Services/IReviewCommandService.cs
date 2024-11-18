@@ -1,6 +1,7 @@
-﻿using Domain.ReviewManagement.Model.Commands;
+﻿using Domain.Review.Model.Commands;
+using Domain.Review.Model.Commands;
 
-namespace Domain.ReviewManagement.Services;
+namespace Domain.Review.Services;
 
 public interface IReviewCommandService
 {

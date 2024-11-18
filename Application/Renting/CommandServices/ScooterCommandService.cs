@@ -7,6 +7,10 @@ using Domain.Shared;
 
 namespace Application.Renting.CommandServices;
 
+/// <summary>
+/// Servicio de comandos de scooters
+/// </summary>
+
 public class ScooterCommandService : IScooterCommandService
 {
     private readonly IScooterRepository _scooterRepository;
@@ -20,24 +24,7 @@ public class ScooterCommandService : IScooterCommandService
 
     public async Task<Guid> Handle(CreateScooterCommand command)
     {
-        // Validaciones para crear scooter
-        if (string.IsNullOrWhiteSpace(command.Name) ||
-            string.IsNullOrWhiteSpace(command.Brand) ||
-            string.IsNullOrWhiteSpace(command.Model) ||
-            string.IsNullOrWhiteSpace(command.District) ||
-            string.IsNullOrWhiteSpace(command.Phone) ||
-            string.IsNullOrWhiteSpace(command.Image))
-        {
-            throw new ArgumentException("Los campos obligatorios deben tener valores válidos.");
-        }
-
-        if (command.PricePerHour <= 0)
-        {
-            throw new ArgumentException("El precio por hora debe ser mayor a 0.");
-        }
-
         var scooter = new ScooterEntity(command);
-
         await _scooterRepository.AddAsync(scooter);
         await _unitOfWork.CompleteAsync();
         return scooter.Id;
@@ -45,33 +32,16 @@ public class ScooterCommandService : IScooterCommandService
 
     public async Task<bool> Handle(UpdateScooterCommand command)
     {
-        // Validación de existencia
         var scooter = await _scooterRepository.GetByIdAsync(command.Id);
         if (scooter == null)
         {
-            throw new Exception("Scooter no encontrado.");
+            throw new Exception("Renting not found");
         }
-
-        // Validaciones para actualizar scooter
-        if (string.IsNullOrWhiteSpace(command.Name) ||
-            string.IsNullOrWhiteSpace(command.Brand) ||
-            string.IsNullOrWhiteSpace(command.Model) ||
-            string.IsNullOrWhiteSpace(command.District) ||
-            string.IsNullOrWhiteSpace(command.Phone) ||
-            string.IsNullOrWhiteSpace(command.Image))
-        {
-            throw new ArgumentException("Los campos obligatorios deben tener valores válidos.");
-        }
-
-        if (command.PricePerHour <= 0)
-        {
-            throw new ArgumentException("El precio por hora debe ser mayor a 0.");
-        }
-
         _scooterRepository.Update(scooter);
         scooter.UpdateScooterInfo(command);
         await _unitOfWork.CompleteAsync();
         return true;
+
     }
 
     public async Task<bool> Handle(DeleteScooterCommand command)

@@ -8,6 +8,7 @@ namespace Application.UserHistorial.QueryServices;
 /// <summary>
 /// Servicio de consultas de historiales
 /// </summary>
+
 public class HistoryQueryService(IHistoryRepository repository) : IHistoryQueryService
 {
     

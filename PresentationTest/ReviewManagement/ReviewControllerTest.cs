@@ -1,11 +1,10 @@
-﻿using Domain.ReviewManagement.Model.Entities;
-using Domain.ReviewManagement.Model.Queries;
-using Domain.ReviewManagement.Services;
+﻿using Domain.Review.Model.Entities;
+using Domain.Review.Model.Queries;
+using Domain.Review.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using Presentation.Review.Controllers;
 using Presentation.Review.Resources;
-using Presentation.ReviewManagement.Controllers;
-using Presentation.ReviewManagement.Resources;
 
 namespace PresentationTest.ReviewManagement;
 

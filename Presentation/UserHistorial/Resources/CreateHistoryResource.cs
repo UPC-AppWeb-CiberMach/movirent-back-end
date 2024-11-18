@@ -1,13 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Presentation.UserHistorial.Validation;
+
 namespace Presentation.UserHistorial.Resources;
 
 public record CreateHistoryResource(
-    [Required] Guid ScooterId,
-    [Required] Guid UserId,
-    [Required] DateTime StartTime,
-    [Required, CompareDates("StartTime", ErrorMessage = "La fecha de finalización debe ser posterior a la fecha de inicio.")]
-    DateTime EndTime,
-    [Required] int Price,
-    [Required] int Time
+    [Required] 
+    Guid ClientId, 
+    [Required] 
+    Guid ScooterId, 
+    [Required] 
+    DateTime StartDate, 
+    [Required] 
+    DateTime EndDate,
+    [Required]
+    decimal Price, 
+    [Required] 
+    int Time
 );

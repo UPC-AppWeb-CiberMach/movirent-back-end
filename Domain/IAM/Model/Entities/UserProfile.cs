@@ -13,9 +13,8 @@ public partial class UserProfile
     public string Dni { get; set; }
     public string Photo { get; set; }
     public string Address { get; set; }
-    public string Rol { get; set; }
     
-    public UserProfile(SingUpCommand command)
+    public UserProfile(CreateUserCommand command)
     {
         Email = command.email;
         Password = command.password;
@@ -24,7 +23,6 @@ public partial class UserProfile
         Dni = command.dni;
         Photo = command.photo;
         Address = command.address;
-        Rol = command.rol;
     }
     
     public UserProfile() 

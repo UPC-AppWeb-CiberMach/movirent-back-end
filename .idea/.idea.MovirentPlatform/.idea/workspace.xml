@@ -10,12 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile.">
-      <change afterPath="$PROJECT_DIR$/ApplicationTest/IAM/EncryptServiceTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationTest/IAM/UserCommandServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/IAM/controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/IAM/controller/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/CreateUserResourceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTest/IAM/UserControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/IAM/QueryServices/UserQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IAM/QueryServices/UserQueryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Renting/QueryServices/ScooterQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Renting/QueryServices/ScooterQueryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/ReviewManagement/CommandServices/ReviewCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ReviewManagement/CommandServices/ReviewCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/ReviewManagement/QueryServices/ReviewQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ReviewManagement/QueryServices/ReviewQueryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Subscription/QueryServices/SubscriptionQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Subscription/QueryServices/SubscriptionQueryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/UserHistorial/CommandServices/HistoryCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/UserHistorial/CommandServices/HistoryCommandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/UserHistorial/QueryServices/HistoryQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/UserHistorial/QueryServices/HistoryQueryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Domain/Shared/IBaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation/IAM/controller/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -59,20 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Presentation: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ELARD/AppData/Local/GitHubDesktop/app-3.4.5/movirent-back-end/MovirentPlatform.sln&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Presentation: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "recuperate",
+    "last_opened_file_path": "C:/Users/ELARD/AppData/Local/GitHubDesktop/app-3.4.5/movirent-back-end/MovirentPlatform.sln",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Presentation: http">
     <configuration name="Presentation: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation/Presentation.csproj" />
@@ -139,7 +146,6 @@
       <workItem from="1731785112500" duration="1023000" />
       <workItem from="1731840229444" duration="636000" />
       <workItem from="1731845553018" duration="4711000" />
-      <workItem from="1731942876531" duration="1442000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Add Moq Packages for testing">
       <option name="closed" value="true" />
@@ -253,6 +259,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add: Add Moq Packages for testing" />

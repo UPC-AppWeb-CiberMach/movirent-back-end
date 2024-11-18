@@ -6,10 +6,10 @@ using Domain.Shared;
 
 namespace Application.Subscription.CommandServices;
 
-
 /// <summary>
 /// Servicio de comandos de suscripciones
 /// </summary>
+
 public class SubscriptionCommandService : ISubscriptionCommandService
 {
     private readonly ISubscriptionRepository _subscriptionRepository;
@@ -23,7 +23,6 @@ public class SubscriptionCommandService : ISubscriptionCommandService
 
     public async Task<int> Handle(CreateSubscriptionCommand command)
     {
-        // Validaciones adicionales antes de crear la suscripción
         if (string.IsNullOrWhiteSpace(command.Name) || command.Name.Length > 50)
         {
             throw new ArgumentException("El nombre de la suscripción no puede estar vacío y debe tener menos de 50 caracteres.");

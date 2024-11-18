@@ -1,9 +1,13 @@
-﻿using Domain.ReviewManagement.Model.Entities;
-using Domain.ReviewManagement.Model.Queries;
-using Domain.ReviewManagement.Repositories;
-using Domain.ReviewManagement.Services;
+﻿using Domain.Review.Model.Entities;
+using Domain.Review.Model.Queries;
+using Domain.Review.Repositories;
+using Domain.Review.Services;
 
 namespace Application.Review.QueryServices;
+
+/// <summary>
+/// Servicio de consultas de reviews
+/// </summary>
 
 public class ReviewQueryService : IReviewQueryService
 {

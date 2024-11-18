@@ -1,7 +1,8 @@
-﻿using Domain.ReviewManagement.Model.Entities;
-using Domain.ReviewManagement.Model.Queries;
+﻿
+using Domain.Review.Model.Entities;
+using Domain.Review.Model.Queries;
 
-namespace Domain.ReviewManagement.Services;
+namespace Domain.Review.Services;
 
 public interface IReviewQueryService
 {
