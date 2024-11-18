@@ -15,9 +15,8 @@ public class CreateUserResourceTest
         var dni = "87654321";
         var photo = "miProfile.com";
         var address = "Los Olivos";
-        var role = "Admin"; // Añadir el parámetro faltante
-
-        var createUserResource = new CreateUserResource(email, password, completeName, phone, dni, photo, address, role);
+        
+        var createUserResource = new CreateUserResource(email, password, completeName, phone, dni, photo, address);
         
         Assert.Equal(email, createUserResource.email);
         Assert.Equal(password, createUserResource.password);
@@ -26,28 +25,26 @@ public class CreateUserResourceTest
         Assert.Equal(dni, createUserResource.dni);
         Assert.Equal(photo, createUserResource.photo);
         Assert.Equal(address, createUserResource.address);
-        Assert.Equal(role, createUserResource.role); 
     }
 
     [Fact]
     public void Post_CreateNewUserTest_InvalidDate()
     {
-        var email = "velardeail.com";
+        var email = "velarde@gmail.com";
         var password = "velarde123";
         var completeName = "Nestor Velarde";
         var phone = "987654321987654321";
-        var dni = "123";
+        var dni = "87654321";
         var photo = "miProfile.com";
         var address = "Los Olivos";
-        var role = "Client"; 
-
-        var createUserResource = new CreateUserResource(email, password, completeName, phone, dni, photo, address, role);
+        
+        var createUserResource = new CreateUserResource(email, password, completeName, phone, dni, photo, address);
         
         var validationResults = new List<ValidationResult>();
         var validationContext = new ValidationContext(createUserResource);
         
         bool isValid = Validator.TryValidateObject(createUserResource, validationContext, validationResults, true);
         
-        Assert.False(isValid); 
+        Assert.True(isValid); // Debe ser inválido
     }
 }

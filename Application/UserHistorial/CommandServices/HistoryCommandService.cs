@@ -7,6 +7,10 @@ using Domain.Shared;
 
 namespace Application.UserHistorial.CommandServices;
 
+/// <summary>
+/// Servicio de comandos de historiales
+/// </summary>
+
 public class HistoryCommandService(IHistoryRepository historyRepository, IUnitOfWork unitOfWork)
     : IHistoryCommandService
 {

@@ -5,6 +5,10 @@ using Domain.Renting.Services;
 
 namespace Application.Renting.QueryServices;
 
+/// <summary>
+/// Servicio de consultas de scooters
+/// </summary>
+/// 
 public class ScooterQueryService(IScooterRepository scooterRepository) : IScooterQueryService
 {
     public async Task<ScooterEntity?> Handle(GetScooterByIdQuery query)

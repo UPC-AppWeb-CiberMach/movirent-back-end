@@ -7,6 +7,10 @@ using Domain.Shared;
 
 namespace Application.Renting.CommandServices;
 
+/// <summary>
+/// Servicio de comandos de scooters
+/// </summary>
+
 public class ScooterCommandService : IScooterCommandService
 {
     private readonly IScooterRepository _scooterRepository;

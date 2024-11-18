@@ -8,6 +8,7 @@ namespace Application.Review.QueryServices;
 /// <summary>
 /// Servicio de consultas de reviews
 /// </summary>
+
 public class ReviewQueryService : IReviewQueryService
 {
     private readonly IReviewRepository _reviewRepository;

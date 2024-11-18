@@ -8,6 +8,7 @@ namespace Application.IAM.QueryServices;
 /// <summary>
 /// Servicio de consultas de usuario
 /// </summary>
+
 public class UserQueryService : IUserQueryService
 {
     private readonly IUsersRepository _usersRepository;

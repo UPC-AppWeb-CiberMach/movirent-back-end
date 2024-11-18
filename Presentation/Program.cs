@@ -19,10 +19,9 @@ using Infrastructure.Renting;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Subscription;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Infrastructure.UserHistorial;
 using Microsoft.EntityFrameworkCore;
-using Presentation.shared.Middleware;
-using AuthenticationMiddleware = Presentation.shared.Middleware.AuthenticationMiddleware;
+using Microsoft.EntityFrameworkCore.Migrations;
 using HistoryRepository = Infrastructure.UserHistorial.HistoryRepository;
 using IHistoryRepository = Domain.UserHistorial.Repositories.IHistoryRepository;
 
@@ -65,13 +64,6 @@ builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>(
 builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-
-builder.Services.AddScoped<IEncryptService, EncryptService>();
-builder.Services.AddScoped<ITokenService, TokenService>();
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer();
-
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
 
 builder.Services.AddDbContext<AppDbContext>(
@@ -108,8 +100,5 @@ app.UseCors("AllowSpecificOrigin");
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseMiddleware<ErrorHandlerMiddleware>();
-app.UseMiddleware<AuthenticationMiddleware>();
 
 app.Run();

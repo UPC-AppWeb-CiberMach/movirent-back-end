@@ -2,6 +2,8 @@
 using Domain.Review.Model.Entities;
 using Domain.Review.Repositories;
 using Domain.Review.Services;
+using Domain.Review.Services;
+using Domain.Review.Model.Commands;
 using Domain.Shared;
 
 namespace Application.Review.CommandServices;
@@ -9,6 +11,7 @@ namespace Application.Review.CommandServices;
 /// <summary>
 /// Servicio de comandos para reseñas
 /// </summary>
+
 public class ReviewCommandService : IReviewCommandService
 {
     private readonly IReviewRepository _reviewRepository;
@@ -26,8 +29,7 @@ public class ReviewCommandService : IReviewCommandService
         {
             throw new ArgumentNullException(nameof(command), "El comando de creación de reseña no puede ser nulo.");
         }
-
-        // Validar el comando directamente
+        
         if (string.IsNullOrWhiteSpace(command.Comment) || command.Comment.Length > 200)
         {
             throw new ArgumentException("El comentario no puede estar vacío y debe tener menos de 200 caracteres.");
@@ -47,7 +49,6 @@ public class ReviewCommandService : IReviewCommandService
         }
         catch (Exception ex)
         {
-            // Registrar el error (opcional, según tu sistema de logs)
             throw new InvalidOperationException("Error al manejar el comando de creación de reseña.", ex);
         }
     }

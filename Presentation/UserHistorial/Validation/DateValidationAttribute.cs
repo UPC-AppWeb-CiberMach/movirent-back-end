@@ -1,33 +1,32 @@
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Presentation.UserHistorial.Validation
+namespace Presentation.UserHistorial.Validation;
+
+public class CompareDatesAttribute : ValidationAttribute
 {
-    public class CompareDatesAttribute : ValidationAttribute
+    private readonly string _comparisonProperty;
+
+    public CompareDatesAttribute(string comparisonProperty)
     {
-        private readonly string _comparisonProperty;
+        _comparisonProperty = comparisonProperty;
+    }
 
-        public CompareDatesAttribute(string comparisonProperty)
+    protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+    {
+        var currentValue = (DateTime?)value;
+        var property = validationContext.ObjectType.GetProperty(_comparisonProperty);
+
+        if (property == null)
+            throw new ArgumentException("Property with this name not found");
+
+        var comparisonValue = (DateTime?)property.GetValue(validationContext.ObjectInstance);
+
+        if (currentValue != null && comparisonValue != null && currentValue <= comparisonValue)
         {
-            _comparisonProperty = comparisonProperty;
+            return new ValidationResult(ErrorMessage ?? $"{validationContext.DisplayName} debe ser posterior a {_comparisonProperty}");
         }
 
-        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
-        {
-            var currentValue = (DateTime?)value;
-            var property = validationContext.ObjectType.GetProperty(_comparisonProperty);
-
-            if (property == null)
-                throw new ArgumentException("Property with this name not found");
-
-            var comparisonValue = (DateTime?)property.GetValue(validationContext.ObjectInstance);
-
-            if (currentValue != null && comparisonValue != null && currentValue <= comparisonValue)
-            {
-                return new ValidationResult(ErrorMessage ?? $"{validationContext.DisplayName} debe ser posterior a {_comparisonProperty}");
-            }
-
-            return ValidationResult.Success;
-        }
+        return ValidationResult.Success;
     }
 }
