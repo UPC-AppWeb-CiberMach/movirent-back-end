@@ -1,3 +1,3 @@
-﻿namespace Domain.Review.Model.Queries;
+﻿namespace Domain.ReviewManagement.Model.Queries;
 
 public record GetAllReviewsQuery;

@@ -1,8 +1,7 @@
-using Domain.Renting.Model.Entities;
-using Domain.Review.Model.Entities;
+using Domain.ReviewManagement.Model.Entities;
 using Domain.Shared;
 
-namespace Domain.Review.Repositories;
+namespace Domain.ReviewManagement.Repositories;
 
 public interface IReviewRepository : IBaseRepository<ReviewEntity>
 {

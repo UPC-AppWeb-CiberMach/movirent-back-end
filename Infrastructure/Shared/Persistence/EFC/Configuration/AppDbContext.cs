@@ -1,6 +1,6 @@
 ﻿using Domain.IAM.Model.Entities;
 using Domain.Renting.Model.Entities;
-using Domain.Review.Model.Entities;
+using Domain.ReviewManagement.Model.Entities;
 using Domain.UserHistorial.Model.Entities;
 using Domain.Subscription.Model.Entities;
 using Microsoft.EntityFrameworkCore;

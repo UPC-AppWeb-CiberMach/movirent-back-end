@@ -1,5 +1,6 @@
-﻿using Domain.Review.Model.Commands;
+﻿using Domain.ReviewManagement.Model.Commands;
 using Presentation.Review.Resources;
+using Presentation.ReviewManagement.Resources;
 
 namespace Presentation.Review.Transform;
 

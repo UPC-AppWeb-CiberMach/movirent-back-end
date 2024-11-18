@@ -8,10 +8,10 @@ public static class CreateHistoryCommandFromResourceAssembler
     public static CreateHistoryCommand ToCommandFromResource(CreateHistoryResource resource)
     {
         return new CreateHistoryCommand(
-            resource.ClientId,
+            resource.UserId,
             resource.ScooterId,
-            resource.StartDate,
-            resource.EndDate,
+            resource.StartTime,
+            resource.EndTime,
             resource.Price,
             resource.Time
         );

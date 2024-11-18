@@ -1,5 +1,5 @@
-using Domain.Review.Model.Entities;
-using Domain.Review.Repositories;
+using Domain.ReviewManagement.Model.Entities;
+using Domain.ReviewManagement.Repositories;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 

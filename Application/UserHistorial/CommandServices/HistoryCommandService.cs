@@ -7,16 +7,19 @@ using Domain.Shared;
 
 namespace Application.UserHistorial.CommandServices;
 
+/// <summary>
+/// Servicio de comandos de historiales
+/// </summary>
 public class HistoryCommandService(IHistoryRepository historyRepository, IUnitOfWork unitOfWork)
     : IHistoryCommandService
 {
     public async Task<long> Handle(CreateHistoryCommand command)
     {
         var existClient = await historyRepository.ExistByClientIdAsync(command.ClientId);
-        if(existClient == false) throw new DuplicateNameException("User does not exist");
+        if(existClient == false) throw new DuplicateNameException("User already have active reservation");
 
         var existScooter = await historyRepository.ExistByScooterIdAsync(command.ScooterId);
-        if(existScooter == false) throw new DuplicateNameException("Scooter does not exist");
+        if(existScooter == false) throw new DuplicateNameException("Scooter is already reserved");
 
         var reservation = new HistoryEntity
         {

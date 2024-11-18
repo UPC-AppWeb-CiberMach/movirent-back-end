@@ -1,7 +1,7 @@
-﻿using Domain.Review.Model.Entities;
-using Domain.Review.Model.Queries;
-using Domain.Review.Repositories;
-using Domain.Review.Services;
+﻿using Domain.ReviewManagement.Model.Entities;
+using Domain.ReviewManagement.Model.Queries;
+using Domain.ReviewManagement.Repositories;
+using Domain.ReviewManagement.Services;
 
 namespace Application.Review.QueryServices;
 

@@ -1,13 +1,16 @@
 ﻿using System.Net.Mime;
-using Domain.Review.Model.Queries;
-using Domain.Review.Services;
-using Domain.Review.Model.Commands;
+using Domain.ReviewManagement.Model.Queries;
+using Domain.ReviewManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Review.Resources;
 using Presentation.Review.Transform;
+using Presentation.ReviewManagement.Resources;
+using Presentation.ReviewManagement.Transform;
 
-namespace Presentation.Review.Controllers;
-
+namespace Presentation.ReviewManagement.Controllers;
+/// <summary>
+/// Controlador de reseñas
+/// </summary>
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
@@ -26,12 +29,20 @@ public class ReviewController (IReviewQueryService reviewQueryService,
     [HttpPost]
     public async Task<IActionResult> CreateScooter([FromBody] CreateReviewResource reviewResource)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            return StatusCode(400, "Invalid data");
+            return BadRequest("Invalid review data.");
         }
-        var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
-        var reviewId = await reviewCommandService.Handle(command);
-        return StatusCode(201, reviewId);
+
+        try
+        {
+            var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
+            var reviewId = await reviewCommandService.Handle(command);
+            return StatusCode(201, reviewId);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "An error occurred while creating the review.");
+        }
     }
 }
