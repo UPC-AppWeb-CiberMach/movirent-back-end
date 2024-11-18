@@ -3,10 +3,10 @@ name: Build and Deploy ASP.Net Core app to Azure Web App
 on:
   push:
     branches:
-      - main
+      - recuperate
   pull_request:
     branches:
-      - main
+      - recuperate
 
 jobs:
   build-and-deploy:
