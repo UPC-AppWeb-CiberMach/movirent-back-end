@@ -1,15 +1,28 @@
-﻿
-using Domain.IAM.Model.Entities;
+﻿using Domain.IAM.Model.Entities;
 using Domain.Renting.Model.Entities;
 using Domain.Review.Model.Entities;
 using Domain.UserHistorial.Model.Entities;
 using Domain.Subscription.Model.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Shared.Persistence.EFC.Configuration;
 
-public class AppDbContext(DbContextOptions options) :DbContext (options)
+public class AppDbContext : DbContext
 {
+    private readonly IConfiguration _configuration;
+
+    public AppDbContext(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+    
+    public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) : base(options)
+    {
+        _configuration = configuration;
+    }
+    
+    
     public DbSet<HistoryEntity> Histories { get; set; }
     
     public DbSet<ScooterEntity> Scooters { get; set; }
@@ -65,17 +78,6 @@ public class AppDbContext(DbContextOptions options) :DbContext (options)
       builder.Entity<SubscriptionEntity>().Property(s => s.Price).IsRequired();
       builder.Entity<SubscriptionEntity>().Property(s => s.Stars).IsRequired();
       
-      base.OnModelCreating(builder);
-      builder.Entity<UserProfile>().ToTable("users");
-      builder.Entity<UserProfile>().HasKey(u => u.Id);
-      builder.Entity<UserProfile>().Property(u => u.Id).IsRequired().ValueGeneratedOnAdd();
-      builder.Entity<UserProfile>().Property(u => u.Email).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.Password).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.CompleteName).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.Phone).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.Dni).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.Photo).IsRequired();
-      builder.Entity<UserProfile>().Property(u => u.Address).IsRequired();
       
       base.OnModelCreating(builder);
         builder.Entity<ReviewEntity>().ToTable("reviews");

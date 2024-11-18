@@ -23,17 +23,6 @@ namespace Presentation.IAM.controller
             return StatusCode(200, usersResource);
         }
         
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserResource userResource)
-        {
-            if(!ModelState.IsValid)
-            {
-                return StatusCode(400, "Invalid data");
-            }
-            var command = CreateUserCommandFromResourceAssembler.ToCommandFromResource(userResource);
-            var userId = await userCommandService.Handle(command);
-            return StatusCode(201, userId);
-        }
         
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetUserById(int id)

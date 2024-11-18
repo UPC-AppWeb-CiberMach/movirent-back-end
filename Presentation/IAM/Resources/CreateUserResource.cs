@@ -30,5 +30,10 @@ public record CreateUserResource(
     [Required]
     [MinLength(4)]
     [MaxLength(60)]
-    string address);
+    string address,
+    [Required]
+    [MinLength(4)]
+    [MaxLength(20)]
+    string role);
+
 

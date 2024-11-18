@@ -17,7 +17,7 @@ public class UserCommandServiceTest
         var usersRepository = new Mock<IUsersRepository>();
         var unitOfWork = new Mock<IUnitOfWork>();
         var userCommandService = new UserCommandService(usersRepository.Object, unitOfWork.Object);
-        var command = new CreateUserCommand(
+        var command = new SingUpCommand(
             "velarde@gmail.com",
             "8765432112",
             "terews",
