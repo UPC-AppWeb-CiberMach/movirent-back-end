@@ -1,3 +1,4 @@
+using System.Reflection;
 using Application.IAM.CommandServices;
 using Application.IAM.QueryServices;
 using Application.Renting.CommandServices;
@@ -22,6 +23,7 @@ using Infrastructure.Subscription;
 using Infrastructure.UserHistorial;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.OpenApi.Models;
 using HistoryRepository = Infrastructure.UserHistorial.HistoryRepository;
 using IHistoryRepository = Domain.UserHistorial.Repositories.IHistoryRepository;
 
@@ -32,7 +34,39 @@ builder.Services.AddControllers();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo()
+    {
+        Version = "v1",
+        Title = "Aplicaciones Web",
+        // Tambien quiero mostrar el logo de la universidad
+        Description = 
+                      "Somos el equipo Movirent, \u2b50\ufe0f conformado por los estudiantes de la carrera de Ingenieria " +
+                      "de Software\ud83d\udcd9 de la Universidad Peruana de Ciencias Aplicadas\ud83d\ude80, durante este " +
+                      "ciclo se vino desarrollando aplicación web (Front-end)\ud83d\udd25 y Servicios (Backend) para alquier " +
+                      "de Scooter en la ciudad de Lima, Perú." +
+                      Environment.NewLine + Environment.NewLine +
+                      "Tecnologías Implementadas:" +
+                      Environment.NewLine + Environment.NewLine +
+                      "![Logo](https://skillicons.dev/icons?i=github,git,discord,cs,azure,aws,md,vscode,visualstudio,htmx)" 
+        ,
+        Contact = new OpenApiContact
+        {
+            Name = "Plataforma de MoviRent",
+            Url = new Uri("https://example.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Licencia de uso",
+            Url = new Uri("https://example.com/license")
+        }
+    });
+
+    // using System.Reflection;
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
 
 // Add CORS policy
 builder.Services.AddCors(options =>

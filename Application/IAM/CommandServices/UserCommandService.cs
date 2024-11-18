@@ -3,6 +3,7 @@ using Domain.IAM.Model.Entities;
 using Domain.IAM.Repositories;
 using Domain.IAM.Services;
 using Domain.Shared;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace Application.IAM.CommandServices;
 
