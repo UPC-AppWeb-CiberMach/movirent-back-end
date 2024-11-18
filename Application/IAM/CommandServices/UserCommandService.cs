@@ -6,6 +6,10 @@ using Domain.Shared;
 
 namespace Application.IAM.CommandServices;
 
+/// <summary>
+/// Servicio de consultas de usuario
+/// </summary>
+
 public class UserCommandService : IUserCommandService
 {
     private readonly IUsersRepository _usersRepository;
