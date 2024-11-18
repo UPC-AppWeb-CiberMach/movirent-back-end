@@ -13,37 +13,21 @@ using Domain.Renting.Services;
 using Domain.Shared;
 using Domain.Subscription.Repositories;
 using Domain.Subscription.Services;
-using Domain.UserHistorial.Repositories;
 using Domain.UserHistorial.Services;
-using Domain.Review.Repositories;
-using Domain.Review.Services;
-using Infrastructure.Review;
-using Application.Review.QueryServices;
-using Application.Review.CommandServices;
 using Infrastructure.IAM;
 using Infrastructure.Renting;
 using Infrastructure.Shared.Persistence.EFC.Configuration;
 using Infrastructure.Shared.Persistence.EFC.Repositories;
 using Infrastructure.Subscription;
-using Infrastructure.UserHistorial;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Presentation.shared.Middleware;
+using AuthenticationMiddleware = Presentation.shared.Middleware.AuthenticationMiddleware;
+using HistoryRepository = Infrastructure.UserHistorial.HistoryRepository;
+using IHistoryRepository = Domain.UserHistorial.Repositories.IHistoryRepository;
 
-
-/// <summary>
-/// Programa principal
-/// Hecho por: CiberMach Grupo 1
-/// Profesor: Naldo Reupo
-/// Curso: Aplicaciones Web
-/// Sección: SI92
-/// Ciclo: 202402
-/// </summary>
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "MovirentPlatform", Version = "v1" });
-});
 
 builder.Services.AddControllers();
 // Add services to the container.
@@ -66,9 +50,9 @@ builder.Services.AddScoped<IScooterQueryService, ScooterQueryService>();
 builder.Services.AddScoped<IScooterCommandService, ScooterCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IHistorialRepository, HistorialRepository>();
-builder.Services.AddScoped<IHistorialQueryService, HistorialQueryService>();
-builder.Services.AddScoped<IHistorialCommandService, HistorialCommandService>();
+builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();
+builder.Services.AddScoped<IHistoryQueryService, HistoryQueryService>();
+builder.Services.AddScoped<IHistoryCommandService, HistoryCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
@@ -81,11 +65,12 @@ builder.Services.AddScoped<ISubscriptionQueryService, SubscriptionQueryService>(
 builder.Services.AddScoped<ISubscriptionCommandService, SubscriptionCommandService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
-builder.Services.AddScoped<IReviewQueryService, ReviewQueryService>();
-builder.Services.AddScoped<IReviewCommandService, ReviewCommandService>();
 
+builder.Services.AddScoped<IEncryptService, EncryptService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
 
 var connectionString = builder.Configuration.GetConnectionString("MovirentPlatform");
 
@@ -123,5 +108,8 @@ app.UseCors("AllowSpecificOrigin");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
+app.UseMiddleware<AuthenticationMiddleware>();
 
 app.Run();

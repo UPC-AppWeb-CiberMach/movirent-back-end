@@ -7,9 +7,7 @@ using Presentation.Review.Resources;
 using Presentation.Review.Transform;
 
 namespace Presentation.Review.Controllers;
-/// <summary>
-/// Controlador de reseñas
-/// </summary>
+
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
@@ -28,20 +26,12 @@ public class ReviewController (IReviewQueryService reviewQueryService,
     [HttpPost]
     public async Task<IActionResult> CreateScooter([FromBody] CreateReviewResource reviewResource)
     {
-        if (!ModelState.IsValid)
+        if(!ModelState.IsValid)
         {
-            return BadRequest("Invalid review data.");
+            return StatusCode(400, "Invalid data");
         }
-
-        try
-        {
-            var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
-            var reviewId = await reviewCommandService.Handle(command);
-            return StatusCode(201, reviewId);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, "An error occurred while creating the review.");
-        }
+        var command = CreateReviewCommandFromResourceAssembler.ToCommandFromResource(reviewResource);
+        var reviewId = await reviewCommandService.Handle(command);
+        return StatusCode(201, reviewId);
     }
 }

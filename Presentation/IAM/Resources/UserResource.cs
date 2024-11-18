@@ -1,6 +1,6 @@
 ﻿namespace Presentation.IAM.Resources;
 
-public record UserResource(int id, string email, string password, string completeName, string phone, string dni, string photo, string address);
+public record UserResource(Guid id, string email, string password, string completeName, string phone, string dni, string photo, string address);
 
 /*
  * public partial class UserProfile

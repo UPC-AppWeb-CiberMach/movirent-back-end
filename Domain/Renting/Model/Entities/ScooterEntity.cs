@@ -5,7 +5,7 @@ using Domain.Scooter.Model.Commands;
 namespace Domain.Renting.Model.Entities;
 public partial class ScooterEntity 
 {
-    public int Id { get; }
+    public Guid Id { get; }
     public string Name { get; set; }
     public string Brand { get; set; }
     public string Model { get; set; }

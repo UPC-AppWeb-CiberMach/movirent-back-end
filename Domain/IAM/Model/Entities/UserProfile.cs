@@ -1,96 +1,52 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Domain.IAM.Model.Commands;
+﻿using Domain.IAM.Model.Commands;
 using Domain.Profile.Model.Commands;
 
 namespace Domain.IAM.Model.Entities;
 
 public partial class UserProfile
 {
-    public int id { get; set; }
-    public string email { get; set; }
-    public string password { get; set; }
-    public string completeName { get; set; }
-    public string phone { get; set; }
-    public string dni { get; set; }
-    public string photo { get; set; }
-    public string address { get; set; }
-
-    public UserProfile(CreateUserCommand command)
+    public Guid Id { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+    public string CompleteName { get; set; }
+    public string Phone { get; set; }
+    public string Dni { get; set; }
+    public string Photo { get; set; }
+    public string Address { get; set; }
+    public string Rol { get; set; }
+    
+    public UserProfile(SingUpCommand command)
     {
-        // Validaciones y asignaciones iniciales
-        if (string.IsNullOrWhiteSpace(command.email))
-            throw new ArgumentException("El correo electrónico es obligatorio.");
-
-        if (!new EmailAddressAttribute().IsValid(command.email))
-            throw new ArgumentException("El formato del correo electrónico es inválido.");
-
-        if (string.IsNullOrWhiteSpace(command.password) || command.password.Length < 8)
-            throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
-
-        if (string.IsNullOrWhiteSpace(command.completeName))
-            throw new ArgumentException("El nombre completo es obligatorio.");
-
-        if (string.IsNullOrWhiteSpace(command.phone))
-            throw new ArgumentException("El teléfono es obligatorio.");
-
-        if (command.dni.Length != 8)
-            throw new ArgumentException("El DNI debe tener exactamente 8 caracteres.");
-
-        if (string.IsNullOrWhiteSpace(command.address))
-            throw new ArgumentException("La dirección es obligatoria.");
-
-        email = command.email;
-        password = command.password;
-        completeName = command.completeName;
-        phone = command.phone;
-        dni = command.dni;
-        photo = command.photo;
-        address = command.address;
+        Email = command.email;
+        Password = command.password;
+        CompleteName = command.completeName;
+        Phone = command.phone;
+        Dni = command.dni;
+        Photo = command.photo;
+        Address = command.address;
+        Rol = command.rol;
     }
-
+    
     public UserProfile() 
     {
-        // Valores predeterminados
-        email = string.Empty; 
-        password = string.Empty;
-        completeName = string.Empty;
-        phone = string.Empty;
-        dni = string.Empty;
-        photo = string.Empty;
-        address = string.Empty;
+        Email = string.Empty; 
+        Password = string.Empty;
+        CompleteName = string.Empty;
+        Phone = string.Empty;
+        Dni = string.Empty;
+        Photo = string.Empty;
+        Address = string.Empty;
     }
-
+    
     public void UpdateUserInfo(UpdateUserCommand command)
     {
-        // Validaciones antes de actualizar
-        if (string.IsNullOrWhiteSpace(command.email))
-            throw new ArgumentException("El correo electrónico es obligatorio.");
-
-        if (!new EmailAddressAttribute().IsValid(command.email))
-            throw new ArgumentException("El formato del correo electrónico es inválido.");
-
-        if (string.IsNullOrWhiteSpace(command.password) || command.password.Length < 8)
-            throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
-
-        if (string.IsNullOrWhiteSpace(command.completeName))
-            throw new ArgumentException("El nombre completo es obligatorio.");
-
-        if (string.IsNullOrWhiteSpace(command.phone))
-            throw new ArgumentException("El teléfono es obligatorio.");
-
-        if (command.dni.Length != 8)
-            throw new ArgumentException("El DNI debe tener exactamente 8 caracteres.");
-
-        if (string.IsNullOrWhiteSpace(command.address))
-            throw new ArgumentException("La dirección es obligatoria.");
-
-        // Asignaciones después de validar
-        email = command.email;
-        password = command.password;
-        completeName = command.completeName;
-        phone = command.phone;
-        dni = command.dni;
-        photo = command.photo;
-        address = command.address;
+        Email = command.email;
+        Password = command.password;
+        CompleteName = command.completeName;
+        Phone = command.phone;
+        Dni = command.dni;
+        Photo = command.photo;
+        Address = command.address;
     }
 }
+

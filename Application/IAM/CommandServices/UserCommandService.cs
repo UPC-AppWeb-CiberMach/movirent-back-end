@@ -1,4 +1,6 @@
-﻿using Domain.IAM.Model.Commands;
+﻿using System.Data;
+using System.Runtime.CompilerServices;
+using Domain.IAM.Model.Commands;
 using Domain.IAM.Model.Entities;
 using Domain.IAM.Repositories;
 using Domain.IAM.Services;
@@ -6,41 +8,61 @@ using Domain.Shared;
 
 namespace Application.IAM.CommandServices;
 
-/// <summary>
-/// Servicio de comandos de usuario
-/// </summary>
-public class UserCommandService : IUserCommandService
+public class UserCommandService(
+    IUsersRepository usersRepository,
+    IUnitOfWork unitOfWork,
+    IEncryptService encryptService,
+    ITokenService tokenService) : IUserCommandService
 {
     private readonly IUsersRepository _usersRepository;
     private readonly IUnitOfWork _unitOfWork;
     
-    public UserCommandService(IUsersRepository usersRepository, IUnitOfWork unitOfWork)
+    public async Task<(UserProfile userProfile, string token)> Handle(SignInCommand command)
     {
-        _usersRepository = usersRepository;
-        _unitOfWork = unitOfWork;
-    }
-    
-    public async Task<int> Handle(CreateUserCommand command)
-    {
-        if (string.IsNullOrWhiteSpace(command.email) || string.IsNullOrWhiteSpace(command.password) ||
-            string.IsNullOrWhiteSpace(command.completeName) || string.IsNullOrWhiteSpace(command.phone) ||
-            string.IsNullOrWhiteSpace(command.dni) || string.IsNullOrWhiteSpace(command.address))
-        {
-            throw new ArgumentException("Todos los campos son obligatorios.");
-        }
+        var existingUser = await usersRepository.GetByEmailAsync(command.email);
+        if (existingUser == null)
+            throw new DataException("Invalid email or password");
         
-        if (command.password.Length < 8)
-        {
-            throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
-        }
+        var isValidPassword = encryptService.Verify(command.Password, existingUser.Password);
+        if(!isValidPassword)
+            throw new DataException("Invalid email or password");
+        
+        var token = tokenService.GenerateToken(existingUser);
 
-        var user = new UserProfile(command);
-        
-        await _usersRepository.AddAsync(user);
-        await _unitOfWork.CompleteAsync();
-        return user.id; 
+        return (existingUser, token);
     }
     
+    public async Task Handle(SingUpCommand command)
+    {
+        var existingUserByEmail = await _usersRepository.GetByEmailAsync(command.email);
+        if (existingUserByEmail != null)
+            throw new DataException("Email already in use");
+
+        var existingUserByDni = await _usersRepository.GetByDniAsync(command.dni);
+        if (existingUserByDni != null)
+            throw new DataException("DNI already in use");
+
+        var existingUserByPhone = await _usersRepository.GetByPhoneAsync(command.phone);
+        if (existingUserByPhone != null)
+            throw new DataException("Phone number already in use");
+
+        
+        var user = new UserProfile
+        {
+            Email = command.email,
+            Password = encryptService.Encrypt(command.password),
+            CompleteName = command.completeName,
+            Phone = command.phone,
+            Dni = command.dni,
+            Photo = command.photo,
+            Address = command.address,
+            Rol = command.rol
+        };
+        
+        await usersRepository.AddAsync(user);
+        await unitOfWork.CompleteAsync();
+    }
+
     public async Task<bool> Handle(UpdateUserCommand command)
     {
         var user = await _usersRepository.GetByIdAsync(command.id);

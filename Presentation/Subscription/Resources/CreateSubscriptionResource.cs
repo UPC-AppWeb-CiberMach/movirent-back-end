@@ -1,4 +1,10 @@
-﻿namespace Presentation.Subscription.Resources;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Presentation.Subscription.Resources;
 
 
-public record CreateSubscriptionResource( string Name, string Description, int Stars, double Price);
+public record CreateSubscriptionResource( 
+    string Name, 
+    string Description, 
+    int Stars, 
+    double Price);

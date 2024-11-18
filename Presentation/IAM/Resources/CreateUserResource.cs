@@ -1,31 +1,39 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Presentation.IAM.Resources
-{
-    public class CreateUserResource
-    {
-        [Required(ErrorMessage = "El correo electrónico es obligatorio.")]
-        [EmailAddress(ErrorMessage = "El formato del correo electrónico es inválido.")]
-        public string email { get; set; }
+namespace Presentation.IAM.Resources;
 
-        [Required(ErrorMessage = "La contraseña es obligatoria.")]
-        [MinLength(8, ErrorMessage = "La contraseña debe tener al menos 8 caracteres.")]
-        public string password { get; set; }
+public record CreateUserResource(
+    [Required]
+    [MinLength(3)]
+    [MaxLength(50)]
+    string email, 
+    [Required]
+    [MinLength(8)]
+    [MaxLength(20)]
+    string password, 
+    [Required]
+    [MinLength(4)]
+    [MaxLength(50)]
+    string completeName, 
+    [Required]
+    [MinLength(9)]
+    [MaxLength(9)]
+    string phone, 
+    [Required]
+    [MinLength(8)]
+    [MaxLength(8)]
+    string dni, 
+    [Required]
+    [MinLength(4)]
+    [MaxLength(60)]
+    string photo, 
+    [Required]
+    [MinLength(4)]
+    [MaxLength(60)]
+    string address,
+    [Required]
+    [MinLength(4)]
+    [MaxLength(20)]
+    string role);
 
-        [Required(ErrorMessage = "El nombre completo es obligatorio.")]
-        public string completeName { get; set; }
 
-        [Required(ErrorMessage = "El teléfono es obligatorio.")]
-        [Phone(ErrorMessage = "El formato del teléfono es inválido.")]
-        public string phone { get; set; }
-
-        [Required(ErrorMessage = "El DNI es obligatorio.")]
-        [StringLength(8, ErrorMessage = "El DNI debe tener 8 caracteres.", MinimumLength = 8)]
-        public string dni { get; set; }
-
-        public string photo { get; set; }
-
-        [Required(ErrorMessage = "La dirección es obligatoria.")]
-        public string address { get; set; }
-    }
-}
