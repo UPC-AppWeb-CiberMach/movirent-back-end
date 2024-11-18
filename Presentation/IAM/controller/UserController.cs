@@ -14,6 +14,29 @@ namespace Presentation.IAM.controller
     public class UserController (IUserQueryService userQueryService, 
         IUserCommandService userCommandService): ControllerBase
     {
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserResource userResource)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState); 
+            }
+
+            var command = new SingUpCommand(
+                userResource.email,
+                userResource.password,
+                userResource.completeName,
+                userResource.phone,
+                userResource.dni,
+                userResource.photo,
+                userResource.address,
+                userResource.role 
+            );
+
+            await userCommandService.Handle(command); 
+            return StatusCode(201, "User created successfully"); 
+        }
+        
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {

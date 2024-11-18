@@ -7,6 +7,7 @@ using Moq;
 using Presentation.IAM.controller;
 using Presentation.IAM.Resources;
 
+
 namespace PresentationTest.IAM;
 
 public class UserControllerTest
@@ -46,7 +47,8 @@ public class UserControllerTest
             "987654321",
             "87654321",
             "miProfile.com",
-            "Los Olivos"
+            "Los Olivos",
+            "Admin"
         )).Result as ObjectResult;
       
         // Esperamos que el resultado no sea nulo y que el código de estado sea 201
