@@ -11,17 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54497b35-6815-4d7e-a58d-2ba8412407d0" name="Changes" comment="feat: Aggregate Test for CreateUserResourceTest.cs in bound Context User Profile.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovirentPlatform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IAM/CommandServices/UserCommandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/IAM/QueryServices/UserQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IAM/QueryServices/UserQueryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Renting/CommandServices/ScooterCommandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Renting/QueryServices/ScooterQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Renting/QueryServices/ScooterQueryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ReviewManagement/CommandServices/ReviewCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ReviewManagement/CommandServices/ReviewCommandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ReviewManagement/QueryServices/ReviewQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ReviewManagement/QueryServices/ReviewQueryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Subscription/CommandServices/SubscriptionCommandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Subscription/QueryServices/SubscriptionQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Subscription/QueryServices/SubscriptionQueryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/UserHistorial/CommandServices/HistoryCommandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/UserHistorial/CommandServices/HistoryCommandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/UserHistorial/QueryServices/HistoryQueryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/UserHistorial/QueryServices/HistoryQueryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +59,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.Presentation: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "recuperate",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/Users/ELARD/AppData/Local/GitHubDesktop/app-3.4.5/movirent-back-end/MovirentPlatform.sln",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
